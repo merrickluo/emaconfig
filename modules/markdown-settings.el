@@ -5,3 +5,8 @@
          ("\\.md\\'" . markdown-mode)
          ("\\.markdown\\'" . markdown-mode))
   :init (setq markdown-command "multimarkdown"))
+
+;; it's markdown too
+(use-package apib-mode
+	:ensure t
+	:mode (("\\.apib\\'" . apib-mode)))

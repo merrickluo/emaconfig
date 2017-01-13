@@ -22,6 +22,7 @@
 
 (load-library "gui-settings")
 (load-library "global-settings")
+(load-library "git-settings")
 (load-library "modeline-settings")
 (load-library "company-settings")
 (load-library "go-settings")
