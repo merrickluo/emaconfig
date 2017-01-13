@@ -25,6 +25,20 @@
         (height . 50) ; lines
         ))
 
+(use-package projectile
+	:ensure t
+	:demand t
+	:bind
+	(("<f3>" . run-term))
+	:init
+	(setq projectile-keymap-prefix (kbd "C-x p"))
+	:config
+	(def-projectile-commander-method ?t
+		"Open Terminal in project root"
+		(run-term))
+	(setq projectile-switch-project-action #'projectile-commander)
+	(projectile-mode))
+
 ;; projectile
 (use-package helm-projectile
 	:ensure t
@@ -34,18 +48,6 @@
 	(("<f1>" . helm-projectile-find-file))
 	:config
 	(helm-projectile-on))
-
-(use-package projectile
-	:ensure t
-	:bind
-	(("<f3>" . run-term))
-	:config
-	(setq projectile-keymap-prefix (kbd "C-x p"))
-	(def-projectile-commander-method ?t
-		"Open Terminal in project root"
-		(run-term))
-	(setq projectile-switch-project-action #'projectile-commander)
-	(projectile-global-mode))
 
 (defun run-term()
 	(interactive)
