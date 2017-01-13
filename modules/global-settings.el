@@ -28,14 +28,36 @@
 ;; projectile
 (use-package helm-projectile
 	:ensure t
+	:after (projectile)
 	:init
-	(use-package projectile	:ensure t)
 	:bind
 	(("<f1>" . helm-projectile-find-file))
 	:config
-	(projectile-global-mode)
 	(helm-projectile-on))
 
+(use-package projectile
+	:ensure t
+	:bind
+	(("<f3>" . run-term))
+	:config
+	(setq projectile-keymap-prefix (kbd "C-x p"))
+	(def-projectile-commander-method ?t
+		"Open Terminal in project root"
+		(run-term))
+	(setq projectile-switch-project-action #'projectile-commander)
+	(projectile-global-mode))
+
+(defun run-term()
+	(interactive)
+	(if (projectile-project-p)
+			(projectile-run-term shell-file-name)
+		(term shell-file-name)))
+
+;; kill term buffer after exit
+(defadvice term-handle-exit
+  (after term-kill-buffer-on-exit activate)
+(kill-buffer))
+	
 (use-package helm-pt
 	:after (helm)
 	:ensure t
