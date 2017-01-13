@@ -30,6 +30,8 @@
 	:ensure t
 	:init
 	(use-package projectile	:ensure t)
+	:bind
+	(("<f1>" . helm-projectile-find-file))
 	:config
 	(projectile-global-mode)
 	(helm-projectile-on))
