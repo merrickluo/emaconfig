@@ -1,7 +1,7 @@
 (setq change-log-default-name   "ChangeLog"
       user-full-name            "A.I."
       user-nick-name            "@merrickluo"
-      major-mode                'text-mode
+;;      major-mode                'lisp-interaction-mode
       enable-local-variables    :safe
       log-mailing-address       "log@cccc.com"
       ;; My Gmail address, Welcome letter
