@@ -65,3 +65,5 @@
 	:ensure t
 	:bind
 	(("<f2>" . helm-projectile-pt)))
+
+(use-package better-defaults :ensure t)
