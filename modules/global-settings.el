@@ -13,31 +13,15 @@
 (setq initial-scratch-message ";; time ticking
 ")
 
-(setq default-frame-alist
-      '(
-        (width . 150) ; character
-        (height . 50) ; lines
-        ))
-
-(setq init-frame-alist
-      '(
-        (width . 150) ; character
-        (height . 50) ; lines
-        ))
-
 (use-package projectile
-	:ensure t
-	:demand t
-	:bind
-	(("<f3>" . run-term))
-	:init
+  :init
 	(setq projectile-keymap-prefix (kbd "C-x p"))
 	:config
 	(def-projectile-commander-method ?t
 		"Open Terminal in project root"
 		(run-term))
 	(setq projectile-switch-project-action #'projectile-commander)
-	(projectile-mode))
+	(projectile-global-mode))
 
 ;; projectile
 (use-package helm-projectile
@@ -65,5 +49,3 @@
 	:ensure t
 	:bind
 	(("<f2>" . helm-projectile-pt)))
-
-(use-package better-defaults :ensure t)

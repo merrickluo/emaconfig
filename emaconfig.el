@@ -7,12 +7,15 @@
    ("org"         . "http://orgmode.org/elpa/")
    ("gnu"         . "http://elpa.gnu.org/packages/")))
 
-(package-initialize t)
+(package-initialize)
 
 ;; Bootstrap `use-package'
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
+
+(setq use-package-always-pin "melpa-stable")
+(setq use-package-always-ensure t)
 
 (defconst emacs-root-path
   (file-name-directory
@@ -27,3 +30,6 @@
 (load-library "company-settings")
 (load-library "go-settings")
 (load-library "markdown-settings")
+(load-library "clojure-settings")
+
+(load-library "prog-settings")

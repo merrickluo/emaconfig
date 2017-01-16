@@ -26,11 +26,8 @@
 ;;; Unbind the stupid minimize that I always hit.
 (global-unset-key "\C-z")
 
-(use-package files
-  :init
-  (setq-default make-backup-files nil
-                auto-save-default nil))
-
+(setq-default make-backup-files nil
+							auto-save-default nil)
 (setq-default tab-width 2)
 (set-face-attribute 'default nil :font "Fira Code-12")
 
@@ -39,6 +36,6 @@
 (scroll-bar-mode -1)
 
 (use-package leuven-theme
-	:ensure t
+	:pin melpa
 	:config
 	(load-theme 'leuven t))
