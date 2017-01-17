@@ -24,12 +24,16 @@
 	(projectile-global-mode))
 
 ;; projectile
+(use-package helm-ag
+	:config
+	(custom-set-variables
+	 '(helm-ag-base-command "pt")))
+
 (use-package helm-projectile
-	:ensure t
-	:after (projectile)
-	:init
+	:after (projectile helm-ag)
 	:bind
-	(("<f1>" . helm-projectile-find-file))
+	(("<f1>" . helm-projectile-find-file)
+	 ("<f2>" . helm-projectile-ag))
 	:config
 	(helm-projectile-on))
 
@@ -43,9 +47,5 @@
 (defadvice term-handle-exit
   (after term-kill-buffer-on-exit activate)
 (kill-buffer))
-	
-(use-package helm-pt
-	:after (helm)
-	:ensure t
-	:bind
-	(("<f2>" . helm-projectile-pt)))
+
+(global-set-key (kbd "<f3>") 'run-term)

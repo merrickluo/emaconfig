@@ -3,6 +3,9 @@
   :after (go-eldoc go-autocomplete)
   :commands (gofmt gofmt-before-save)
   :mode "\\.go\\'"
+	:bind
+	(("M-." . godef-jump)
+	 ("M-*" . pop-tag-mark))
   :config
   (add-hook 'before-save-hook 'gofmt-before-save)
 	(add-hook 'go-mode-hook
@@ -23,3 +26,6 @@
 	:ensure t
   :init
   (add-hook 'go-mode-hook 'go-eldoc-setup))
+
+(use-package protobuf-mode
+	:mode "\\.proto\\'")
