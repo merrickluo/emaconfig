@@ -1,4 +1,15 @@
-;; helm
+;; -*- Emacs-Lisp -*-
+;; Last modified: <2011-12-08 20:40:21 Thursday by richard>
+
+;; Copyright (C) 2017 A.I.
+
+;; Author: A.I.
+;; Email: merrick@luois.me
+
+;; Version: 0.1
+;; PUBLIC LICENSE: GPLv3
+
+;;; Code:
 (use-package helm
 	:ensure t
   :bind (("M-x" . helm-M-x)
@@ -24,10 +35,7 @@
 	(projectile-global-mode))
 
 ;; projectile
-(use-package helm-ag
-	:config
-	(custom-set-variables
-	 '(helm-ag-base-command "pt")))
+(use-package helm-ag)
 
 (use-package helm-projectile
 	:after (projectile helm-ag)
@@ -49,3 +57,12 @@
 (kill-buffer))
 
 (global-set-key (kbd "<f3>") 'run-term)
+
+(use-package yasnippet
+	:commands (yas-minor-mode)
+	:defer t
+	:config
+	(add-to-list yas-snippet-dirs (concat emacs-root-path "snippets")))
+
+(provide 'global-settings)
+;;; global-settings.el ends here

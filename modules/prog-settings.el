@@ -11,3 +11,7 @@
 (use-package flycheck
 	:config
 	(add-hook 'prog-mode-hook #'flycheck-mode))
+
+(use-package yasnippet
+	:config
+	(add-hook 'prog-mode-hook #'yas-minor-mode))
