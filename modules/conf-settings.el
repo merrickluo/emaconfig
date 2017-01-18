@@ -7,5 +7,5 @@
 	:mode (("\\.yml\\'" . yaml-mode)))
 
 (use-package toml-mode
-	:ensure t
+  :pin melpa
 	:mode (("\\.toml\\'" . toml-mode)))

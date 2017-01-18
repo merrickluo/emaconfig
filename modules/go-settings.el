@@ -4,8 +4,9 @@
   :commands (gofmt gofmt-before-save)
   :mode "\\.go\\'"
 	:bind
-	(("M-." . godef-jump)
-	 ("M-*" . pop-tag-mark))
+	(:map go-mode-map
+				("M-." . godef-jump)
+				("M-*" . pop-tag-mark))
   :config
   (add-hook 'before-save-hook 'gofmt-before-save)
 	(add-hook 'go-mode-hook

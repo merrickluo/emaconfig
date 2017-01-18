@@ -1,5 +1,6 @@
 ;; setup package.el and use-package
-(setq
+
+(setq-default
  package-enable-at-startup nil
  package-archives
  '(("melpa-stable" . "http://stable.melpa.org/packages/")
@@ -14,13 +15,13 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
-(setq use-package-always-pin "melpa-stable")
-(setq use-package-always-ensure t)
+(setq-default use-package-always-pin "melpa-stable")
+(setq-default use-package-always-ensure t)
 
 (defconst emacs-root-path
   (file-name-directory
 	 (or load-file-name buffer-file-name))
-	"Emacs root settings path (in linux)")
+	"Emacs root settings path (in linux).")
 (add-to-list 'load-path (concat emacs-root-path "modules"))
 
 (load-library "gui-settings")
@@ -31,5 +32,6 @@
 (load-library "go-settings")
 (load-library "markdown-settings")
 (load-library "clojure-settings")
+(load-library "conf-settings")
 
 (load-library "prog-settings")

@@ -29,7 +29,7 @@
 (setq-default make-backup-files nil
 							auto-save-default nil)
 (setq-default tab-width 2)
-(set-face-attribute 'default nil :font "Fira Code-12")
+(set-face-attribute 'default nil :font "Operator Mono-13")
 
 (menu-bar-mode -1)
 (tool-bar-mode -1)
