@@ -1,5 +1,5 @@
 ;; -*- Emacs-Lisp -*-
-;; Last modified: <2011-12-08 20:40:21 Thursday by richard>
+;; Last modified: <2017-01-19 10:04:06 Thursday by merrick>
 
 ;; Copyright (C) 2017 A.I.
 
@@ -62,7 +62,7 @@
 	:commands (yas-minor-mode)
 	:defer t
 	:config
-	(add-to-list yas-snippet-dirs (concat emacs-root-path "snippets")))
+	(add-to-list 'yas-snippet-dirs (concat emacs-root-path "snippets")))
 
 (provide 'global-settings)
 ;;; global-settings.el ends here
