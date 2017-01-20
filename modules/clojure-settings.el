@@ -6,6 +6,7 @@
 				 ("\\.edn\\'" . clojure-mode)))
 
 (use-package cider
-  :ensure t
-  :config
+	:commands (cider-jack-in)
+	:defer t
+	:config
   (add-hook 'cider-repl-mode-hook #'eldoc-mode))
