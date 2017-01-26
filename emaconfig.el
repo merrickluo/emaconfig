@@ -34,5 +34,6 @@
 (load-library "markdown-settings")
 (load-library "clojure-settings")
 (load-library "conf-settings")
+(load-library "chinese-settings")
 
 (load-library "prog-settings")
