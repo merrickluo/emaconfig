@@ -1,5 +1,5 @@
 ;; -*- Emacs-Lisp -*-
-;; Last modified: <2017-01-20 11:38:00 Friday by merrick>
+;; Last modified: <2017-02-14 11:14:57 Tuesday by merrick>
 
 ;; Copyright (C) 2017 A.I.
 
@@ -40,9 +40,11 @@
 		"Open Terminal in project root"
 		(run-term))
 	(setq projectile-switch-project-action #'projectile-commander)
+	(setq projectile-enable-caching t)
 	(projectile-global-mode))
 
 (use-package helm-projectile
+	:pin melpa
 	:after (projectile)
 	:bind
 	(("<f1>" . helm-projectile-find-file)
@@ -51,12 +53,29 @@
 	(use-package helm-ag)
 	(helm-projectile-on))
 
+(defun projectile-run-multi-term (program)
+	(interactive (list nil))
+  (let* ((term (concat "multi-term " (projectile-project-name)))
+         (buffer (concat "*" term "*")))
+    (unless (get-buffer buffer)
+      (require 'term)
+      (let ((program (or program
+                         (read-from-minibuffer "Run program: "
+                                               (or explicit-shell-file-name
+                                                   (getenv "ESHELL")
+                                                   (getenv "SHELL")
+                                                   "/bin/sh")))))
+        (projectile-with-default-dir (projectile-project-root)
+          (set-buffer (make-term term program))
+          (term-mode)
+          (term-char-mode))))
+    (switch-to-buffer buffer)))
+
 (defun run-term()
 	(interactive)
 	(if (projectile-project-p)
-			(projectile-run-term shell-file-name)
-		(term shell-file-name)))
-
+			(projectile-run-multi-term shell-file-name)
+		(multi-term shell-file-name)))
 
 (global-set-key (kbd "<f3>") 'run-term)
 
@@ -65,6 +84,9 @@
 	:defer t
 	:config
 	(add-to-list 'yas-snippet-dirs (concat emacs-root-path "snippets")))
+
+(use-package multi-term
+	:pin melpa)
 
 (provide 'global-settings)
 ;;; global-settings.el ends here
