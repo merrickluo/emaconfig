@@ -1,5 +1,5 @@
 ;; -*- Emacs-Lisp -*-
-;; Last modified: <2017-02-14 11:14:57 Tuesday by merrick>
+;; Last modified: <2017-02-14 22:32:35 Tuesday by merrick>
 
 ;; Copyright (C) 2017 A.I.
 
@@ -87,6 +87,9 @@
 
 (use-package multi-term
 	:pin melpa)
+
+(use-package ace-window
+	:bind (("C-x o" . ace-window)))
 
 (provide 'global-settings)
 ;;; global-settings.el ends here
