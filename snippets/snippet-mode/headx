@@ -1,0 +1,18 @@
+# -*- mode: snippet -*-
+# Last modified: <2013-09-26 11:29:31 Thursday by wongrichard>
+# name: snippet headx
+# key: headx
+# contributor: Richard Wong <chao787@gmail.com>
+# --
+# -*- mode: snippet -*-
+# Last modified: < >
+# name: ${1:`(if (buffer-file-name)
+               (file-name-nondirectory (file-name-sans-extension (buffer-file-name)))
+              (buffer-name))`}
+# key: ${2:`(if (buffer-file-name)
+               (file-name-nondirectory (file-name-sans-extension (buffer-file-name)))
+              (buffer-name))`}
+# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
+# contributor: `user-full-name` <`user-mail-address`>
+# --
+$0

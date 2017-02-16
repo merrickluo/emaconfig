@@ -1,0 +1,19 @@
+# -*- mode: snippet -*-
+# Last modified: <2017-02-17 00:00:16 Friday by merrick>
+# name: headx
+# key: headx
+# contributor: Richard Wong <chao787@gmail.com>
+# --
+;; Last modified: <2011-12-08 20:40:21 Thursday by `user-full-name`>
+
+;; Copyright (C) `(format-time-string "%Y")` `user-full-name`
+
+;; Author: `user-full-name`
+;; Email: `user-mail-address`
+
+;; Version: 0.1
+;; PUBLIC LICENSE: WTFPL
+$0
+
+
+;; `(file-name-nondirectory (buffer-file-name))` ends here
