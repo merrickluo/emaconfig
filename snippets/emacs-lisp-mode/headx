@@ -1,8 +1,9 @@
 # -*- mode: snippet -*-
-# Last modified: <2017-02-16 23:10:05 Thursday by merrick>
+# Last modified: <2017-02-16 23:22:49 Thursday by merrick>
 # name: auto-head for el. files.
 # key: headx
 # contributor: A.I. <merrick@luois.me>
+# PUBLIC LICENSE: GPLv3
 # --
 ;;; `(and (buffer-file-name) (file-name-nondirectory (buffer-file-name)))` --- summary
 ;; Description:
@@ -11,6 +12,7 @@
 ;; Email: `user-mail-address`
 ;; Last modified: <2011-12-08 20:40:21 Thursday by `user-full-name`>
 ;; Copyright (C) `(format-time-string "%Y")` `user-full-name` all rights reserved.
+;; PUBLIC LICENSE: GPLv3
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; 

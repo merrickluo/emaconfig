@@ -3,8 +3,9 @@
 ;; 
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-02-16 23:12:06 Thursday by merrick>
+;; Last modified: <2017-02-16 23:23:28 Thursday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
+;; PUBLIC LICENSE: GPLv3
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; 
