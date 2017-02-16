@@ -1,17 +1,27 @@
-;; -*- Emacs-Lisp -*-
-;; Last modified: <2017-01-18 21:02:20 Wednesday by merrick>
-
-;; Copyright (C) 2017 A.I.
-
+;;; auto-insert-settings.el --- summary
+;; Description:
+;; 
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-
-;; Version: 0.1
+;; Last modified: <2017-02-16 23:27:35 Thursday by merrick>
+;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
-
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;;; Commentary:
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;;; Change log:
+;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
 ;;; Code:
+
+(require 'autoinsert)
 (setq auto-insert-query nil
-      auto-insert-directory "~/.emacs.d")
+			auto-insert-directory "~/.emacs.d")
 
 (defun insert-snippet (snippet)
   "Insert snippet SNIPPET."
@@ -24,7 +34,7 @@
   (insert-snippet "headx"))
 
 (defun insert-abbrev (abbrev-name)
-  "Insert abbrev ABBREV-NAME"
+  "Insert abbrev ABBREV-NAME."
   (interactive "s")
   (insert abbrev-name)
   (expand-abbrev))
@@ -70,10 +80,10 @@
 
 ;; time-stamp settings. Change modified style
 (add-hook 'write-file-hooks 'time-stamp)
-(setq time-stamp-start "Last modified:[ \t]+\\\\?[\"<]+"
-      time-stamp-format "%04y-%02m-%02d %02H:%02M:%02S %:a by %u"
-      time-stamp-end "\\\\?[\">]")
+(setq-default time-stamp-start "Last modified:[ \t]+\\\\?[\"<]+"
+							time-stamp-format "%04y-%02m-%02d %02H:%02M:%02S %:a by %u"
+							time-stamp-end "\\\\?[\">]")
 
 
 (provide 'auto-insert-settings)
-;; auto-insert-settings.el ends here
+;;; auto-insert-settings.el ends here

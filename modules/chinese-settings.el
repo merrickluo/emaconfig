@@ -1,3 +1,27 @@
+;;; chinese-settings.el --- summary
+;; Description:
+;; 
+;; Author: A.I.
+;; Email: merrick@luois.me
+;; Last modified: <2017-02-16 23:30:18 Thursday by merrick>
+;; Copyright (C) 2017 A.I. all rights reserved.
+;; PUBLIC LICENSE: GPLv3
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;;; Commentary:
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;;; Change log:
+;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Local Variables:
+;; byte-compile-warnings: (not free-vars)
+;; End:
+;;; Code:
+
 (use-package chinese-pyim)
 (use-package chinese-pyim-basedict
 	:after (chinese-pyim)
@@ -32,11 +56,14 @@
   ;; 让 Emacs 启动时自动加载 pyim 词库
   (add-hook 'emacs-startup-hook
             #'(lambda () (pyim-restart-1 t)))
-  :bind
-  (("M-j" . pyim-convert-code-at-point) ;与 pyim-probe-dynamic-english 配合
-   ("C-;" . pyim-delete-word-from-personal-buffer)))
+  :bind (("M-j" . pyim-convert-code-at-point) ;与 pyim-probe-dynamic-english 配合
+				 ("C-;" . pyim-delete-word-from-personal-buffer)))
 
 (use-package chinese-fonts-setup
 	:config
 	(setq cfs-profiles
 				'("normal" "orgmode")))
+
+
+(provide 'chinese-settings)
+;;; chinese-settings.el ends here

@@ -1,9 +1,34 @@
+;;; clojure-settings.el --- summary
+;; Description:
+;; 
+;; Author: A.I.
+;; Email: merrick@luois.me
+;; Last modified: <2017-02-16 23:50:23 Thursday by merrick>
+;; Copyright (C) 2017 A.I. all rights reserved.
+;; PUBLIC LICENSE: GPLv3
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;;; Commentary:
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;;; Change log:
+;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Local Variables:
+;; byte-compile-warnings: (not free-vars)
+;; End:
+;;; Code:
+
 (use-package clojure-mode
+	:commands clojure-mode
 	:ensure t
-	:mode (("\\..clj\\'" . clojure-mode)
-				 ("\\.cljs\\'" . clojure-mode)
-				 ("\\.cljc\\'" . clojure-mode)
-				 ("\\.edn\\'" . clojure-mode)))
+	:mode ("\\..clj\\'"
+				 "\\.cljs\\'"
+				 "\\.cljc\\'"
+				 "\\.edn\\'"))
 
 (use-package cider
 	:commands (cider-jack-in)
@@ -14,3 +39,6 @@
            (figwheel-sidecar.repl-api/start-figwheel! 'android)
            (figwheel-sidecar.repl-api/cljs-repl))")
   (add-hook 'cider-repl-mode-hook #'eldoc-mode))
+
+(provide 'clojure-settings)
+;;; clojure-settings.el ends here

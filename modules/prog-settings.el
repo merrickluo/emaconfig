@@ -1,3 +1,28 @@
+;;; prog-settings.el --- summary
+;; Description:
+;; 
+;; Author: A.I.
+;; Email: merrick@luois.me
+;; Last modified: <2017-02-16 23:53:44 Thursday by merrick>
+;; Copyright (C) 2017 A.I. all rights reserved.
+;; PUBLIC LICENSE: GPLv3
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;;; Commentary:
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;;; Change log:
+;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Local Variables:
+;; byte-compile-warnings: (not free-vars)
+;; End:
+;;
+;;; Code:
+
 (use-package rainbow-delimiters
   :config
   (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
@@ -15,3 +40,7 @@
 (use-package yasnippet
 	:config
 	(add-hook 'prog-mode-hook #'yas-minor-mode))
+
+
+(provide 'prog-settings)
+;;; prog-settings.el ends here

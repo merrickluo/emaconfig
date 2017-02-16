@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# Last modified: <2017-02-16 23:22:49 Thursday by merrick>
+# Last modified: <2017-02-16 23:32:36 Thursday by merrick>
 # name: auto-head for el. files.
 # key: headx
 # contributor: A.I. <merrick@luois.me>
@@ -28,5 +28,4 @@
 $0
 
 (provide '`(and (buffer-file-name) (file-name-nondirectory (file-name-sans-extension (buffer-file-name))))`)
-;; `(and (buffer-file-name) (file-name-nondirectory (buffer-file-name)))` ends here
-;;;
+;;; `(and (buffer-file-name) (file-name-nondirectory (buffer-file-name)))` ends here

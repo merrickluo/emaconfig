@@ -1,17 +1,29 @@
-;; -*- Emacs-Lisp -*-
-;; Last modified: <2017-02-14 22:32:35 Tuesday by merrick>
-
-;; Copyright (C) 2017 A.I.
-
+;;; global-settings.el --- summary
+;; Description:
+;; 
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-
-;; Version: 0.1
+;; Last modified: <2017-02-16 23:45:51 Thursday by merrick>
+;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
-
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;;; Commentary:
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;;; Change log:
+;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Local Variables:
+;; byte-compile-warnings: (not free-vars)
+;; End:
+;;
 ;;; Code:
-
 ;; behavior settings
+
 (defalias 'yes-or-no-p 'y-or-n-p)
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
 (setq inhibit-splash-screen t)
@@ -20,8 +32,8 @@
 
 ;; kill term buffer after exit
 (defadvice term-handle-exit
-  (after term-kill-buffer-on-exit activate)
-(kill-buffer))
+		(after term-kill-buffer-on-exit activate)
+	(kill-buffer))
 
 ;; hlem
 (use-package helm
@@ -54,7 +66,8 @@
 	(helm-projectile-on))
 
 (defun projectile-run-multi-term (program)
-	(interactive (list nil))
+	"Run multi-term in project root, PROGRAM is shell to run."
+	(interactive)
   (let* ((term (concat "multi-term " (projectile-project-name)))
          (buffer (concat "*" term "*")))
     (unless (get-buffer buffer)
@@ -83,7 +96,8 @@
 	:commands (yas-minor-mode)
 	:defer t
 	:config
-	(add-to-list 'yas-snippet-dirs (concat emacs-root-path "snippets")))
+	(add-to-list 'yas-snippet-dirs (concat emacs-root-path "snippets"))
+	(yas-reload-all))
 
 (use-package multi-term
 	:pin melpa)
