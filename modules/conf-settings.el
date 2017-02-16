@@ -3,7 +3,7 @@
 ;; 
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-02-16 23:51:02 Thursday by merrick>
+;; Last modified: <2017-02-17 00:20:28 Friday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -28,12 +28,12 @@
 
 (use-package yaml-mode
   :commands yaml-mode
-	:mode ("\\.yml\\'"))
+	:mode "\\.yml\\'")
 
 (use-package toml-mode
   :pin melpa
 	:commands toml-mode
-	:mode ("\\.toml\\'"))
+	:mode "\\.toml\\'")
 
 (provide 'conf-settings)
 ;;; conf-settings.el ends here

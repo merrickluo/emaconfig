@@ -3,7 +3,7 @@
 ;; 
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-02-16 23:50:23 Thursday by merrick>
+;; Last modified: <2017-02-17 00:19:54 Friday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -25,10 +25,7 @@
 (use-package clojure-mode
 	:commands clojure-mode
 	:ensure t
-	:mode ("\\..clj\\'"
-				 "\\.cljs\\'"
-				 "\\.cljc\\'"
-				 "\\.edn\\'"))
+	:mode "\\..clj\\'"	"\\.cljs\\'"	"\\.cljc\\'"	"\\.edn\\'")
 
 (use-package cider
 	:commands (cider-jack-in)
