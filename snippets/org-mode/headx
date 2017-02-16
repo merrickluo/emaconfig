@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# Last modified: <2014-07-25 10:19:53 Friday by wongrichard>
+# name : headx
+# key : headx
+# contributor: Richard Wong <chao78787@Gmail.com>
+# --
+# -*- mode: org -*-
+# Last modified: < >
+#+OPTIONS: toc:nil
+#+STARTUP: showall
+#+TODO: TODO(t) UNDERGOING(u) | DONE(d) CANCELED(c)
+#+TITLE: ${1:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`}
+#+AUTHOR: `user-full-name`
+
+$0
