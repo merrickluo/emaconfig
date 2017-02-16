@@ -1,20 +1,27 @@
 # -*- mode: snippet -*-
-# Last modified: <2016-09-20 16:50:28 Tuesday by richard>
+# Last modified: <2017-02-16 23:10:05 Thursday by merrick>
 # name: auto-head for el. files.
 # key: headx
-# contributor: Richard Wong <chao787@gmail.com>
+# contributor: A.I. <merrick@luois.me>
 # --
-;; -*- Emacs-Lisp -*-
-;; Last modified: <2011-12-08 20:40:21 Thursday by richard>
-
-;; Copyright (C) `(format-time-string "%Y")` `user-full-name`
-
+;;; `(and (buffer-file-name) (file-name-nondirectory (buffer-file-name)))` --- summary
+;; Description:
+;; 
 ;; Author: `user-full-name`
 ;; Email: `user-mail-address`
-
-;; Version: 0.1
-;; PUBLIC LICENSE: GPLv3
-
+;; Last modified: <2011-12-08 20:40:21 Thursday by `user-full-name`>
+;; Copyright (C) `(format-time-string "%Y")` `user-full-name` all rights reserved.
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;;; Commentary:
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;;; Change log:
+;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
 ;;; Code:
 $0
 
