@@ -1,22 +1,43 @@
-;; setup package.el and use-package
+;;; emaconfig.el --- summary
+;; Description:
+;; 
+;; Author: A.I.
+;; Email: merrick@luois.me
+;; Last modified: <2017-02-16 23:12:06 Thursday by merrick>
+;; Copyright (C) 2017 A.I. all rights reserved.
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;;; Commentary:
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;;; Change log:
+;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;;; Code:
 
-(setq-default
+;; Bootstrap `use-package'
+(defvar package-archives)
+(setq
  package-enable-at-startup nil
  package-archives
  '(("melpa-stable" . "http://stable.melpa.org/packages/")
-   ("melpa" . "http://melpa.org/packages/")
-   ("org"         . "http://orgmode.org/elpa/")
-   ("gnu"         . "http://elpa.gnu.org/packages/")))
+   ("melpa"        . "http://melpa.org/packages/")
+   ("org"          . "http://orgmode.org/elpa/")
+   ("gnu"          . "http://elpa.gnu.org/packages/")))
 
-(package-initialize)
+(eval-when-compile
+	(require 'package)
+	(package-initialize)
+	(unless (package-installed-p 'use-package)
+		(package-refresh-contents)
+		(package-install 'use-package)))
 
-;; Bootstrap `use-package'
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
-
-(setq-default use-package-always-pin "melpa-stable")
-(setq-default use-package-always-ensure t)
+(require 'use-package)
+(setq use-package-always-pin "melpa-stable")
+(setq use-package-always-ensure t)
 
 (defconst emacs-root-path
   (file-name-directory
@@ -34,6 +55,9 @@
 (load-library "markdown-settings")
 (load-library "clojure-settings")
 (load-library "conf-settings")
+(load-library "prog-settings")
+
 ;;(load-library "chinese-settings")
 
-(load-library "prog-settings")
+(provide 'emaconfig)
+;;; emaconfig.el ends here
