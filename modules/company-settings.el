@@ -3,7 +3,7 @@
 ;; 
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-02-16 23:40:16 Thursday by merrick>
+;; Last modified: <2017-02-18 18:13:46 Saturday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -23,8 +23,7 @@
 ;;; Code:
 
 (use-package company
-	:commands (global-company-mode company-mode)
-  :config
+	:config
 	(global-company-mode)
 	(setq company-idle-delay 0)
 	(setq company-minimum-prefix-length 2))
