@@ -46,6 +46,12 @@
 	"Emacs root settings path (in linux).")
 (add-to-list 'load-path (concat emacs-root-path "modules"))
 
+(defun kill-current-buffer()
+	(interactive)
+	(kill-buffer (current-buffer)))
+
+(global-set-key (kbd "C-x k") 'kill-current-buffer)
+
 (load-library "gui-settings")
 (load-library "global-settings")
 (load-library "auto-insert-settings")
