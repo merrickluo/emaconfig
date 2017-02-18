@@ -62,7 +62,10 @@
 (use-package leuven-theme
 	:pin melpa
 	:config
-	(load-theme 'leuven t))
+	(load-theme 'leuven t)
+	(setq leuven-scale-outline-headlines nil))
+
+
 
 (provide 'gui-settings)
 ;;; gui-settings.el ends here
