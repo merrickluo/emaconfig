@@ -3,7 +3,7 @@
 ;; 
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-02-18 18:05:03 Saturday by merrick>
+;; Last modified: <2017-02-18 19:57:11 Saturday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -45,6 +45,7 @@
 
 ;; projectile
 (use-package projectile
+	:demand t
 	:init
 	(setq projectile-keymap-prefix (kbd "C-x p"))
 	:bind (([f1] . smart-find-file)
