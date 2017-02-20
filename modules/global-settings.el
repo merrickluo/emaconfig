@@ -3,7 +3,7 @@
 ;; 
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-02-18 19:57:11 Saturday by merrick>
+;; Last modified: <2017-02-20 15:22:31 Monday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -84,10 +84,10 @@
 	 ("C-h f" . counsel-describe-function)
 	 ("C-h v" . counsel-describe-variable)
 	 ("C-h i" . counsel-info-lookup-symbol)
+	 ("C-x b" . ivy-switch-buffer)
 	 ([f1] . counsel-projectile-find-file)
 	 (:map read-expression-map
-				 ("C-r" . counsel-expression-history)))
-	)
+				 ("C-r" . counsel-expression-history))))
 
 ;; (use-package counsel-projectile
 ;; 	:pin melpa)
