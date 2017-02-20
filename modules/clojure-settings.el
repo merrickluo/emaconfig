@@ -3,7 +3,7 @@
 ;; 
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-02-17 00:19:54 Friday by merrick>
+;; Last modified: <2017-02-20 15:51:29 Monday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -33,7 +33,7 @@
 	:config
 	(setq cider-cljs-lein-repl
 				"(do (require 'figwheel-sidecar.repl-api)
-           (figwheel-sidecar.repl-api/start-figwheel! 'android)
+           (figwheel-sidecar.repl-api/start-figwheel!)
            (figwheel-sidecar.repl-api/cljs-repl))")
   (add-hook 'cider-repl-mode-hook #'eldoc-mode))
 
