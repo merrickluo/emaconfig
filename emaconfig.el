@@ -3,7 +3,7 @@
 ;; 
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-02-17 00:14:03 Friday by merrick>
+;; Last modified: <2017-02-21 17:27:51 Tuesday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -51,6 +51,8 @@
 	(kill-buffer (current-buffer)))
 
 (global-set-key (kbd "C-x k") 'kill-current-buffer)
+
+(load-library "personal-settings")
 
 (load-library "gui-settings")
 (load-library "global-settings")

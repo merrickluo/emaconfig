@@ -3,7 +3,7 @@
 ;; 
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-02-16 23:52:14 Thursday by merrick>
+;; Last modified: <2017-02-21 17:27:22 Tuesday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -22,14 +22,6 @@
 ;; End:
 ;;
 ;;; Code:
-
-(setq change-log-default-name   "ChangeLog"
-      user-full-name            "A.I."
-      user-nick-name            "@merrickluo"
-      major-mode                'lisp-interaction-mode
-      enable-local-variables    :safe
-      log-mailing-address       "log@cccc.com"
-			user-mail-address         "merrick@luois.me")
 
 (setq-default default-directory "~"
               indicate-buffer-boundaries 'left)
@@ -52,6 +44,7 @@
 
 (setq-default make-backup-files nil
 							auto-save-default nil)
+
 (setq-default tab-width 2)
 (set-face-attribute 'default nil :font "Operator Mono Book-10")
 
@@ -64,8 +57,6 @@
 	:config
 	(load-theme 'leuven t)
 	(setq leuven-scale-outline-headlines nil))
-
-
 
 (provide 'gui-settings)
 ;;; gui-settings.el ends here
