@@ -3,7 +3,7 @@
 ;; 
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-02-23 11:23:59 Thursday by merrick>
+;; Last modified: <2017-02-23 22:16:38 Thursday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -23,7 +23,7 @@
 ;;; Code:
 
 (use-package clojure-mode
-	:commands clojure-mode
+	:commands (clojure-mode clojurescript-mode)
 	:ensure t
 	:mode (("\\..clj\\'" . clojure-mode)
 				 ("\\.cljs\\'" . clojurescript-mode)

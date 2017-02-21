@@ -3,7 +3,7 @@
 ;; 
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-02-21 17:27:51 Tuesday by merrick>
+;; Last modified: <2017-02-21 22:03:43 Tuesday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -66,6 +66,7 @@
 (load-library "conf-settings")
 (load-library "prog-settings")
 (load-library "org-settings")
+(load-library "web-settings")
 
 ;;(load-library "chinese-settings")
 
