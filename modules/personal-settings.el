@@ -3,7 +3,7 @@
 ;; 
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-02-21 17:27:35 Tuesday by merrick>
+;; Last modified: <2017-02-21 17:48:59 Tuesday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -26,6 +26,10 @@
       enable-local-variables    :safe
       log-mailing-address       "log@cccc.com"
 			user-mail-address         "merrick@luois.me")
+
+(use-package nyan-mode
+	:config
+	(nyan-mode))
 
 (provide 'personal-settings)
 ;;; personal-settings.el ends here
