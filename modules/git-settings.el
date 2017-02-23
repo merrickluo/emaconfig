@@ -3,7 +3,7 @@
 ;; 
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-02-21 17:49:13 Tuesday by merrick>
+;; Last modified: <2017-02-23 11:08:15 Thursday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -30,9 +30,9 @@
   :commands (git-timemachine)
   :bind (("C-x v t" . git-timemachine)))
 
-(use-package magithub
-  :after magit
-  :config (magithub-feature-autoinject t))
+;; (use-package magithub
+;;   :after magit
+;;   :config (magithub-feature-autoinject t))
 
 (provide 'git-settings)
 ;;; git-settings.el ends here
