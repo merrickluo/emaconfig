@@ -3,7 +3,7 @@
 ;; 
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-02-20 15:22:31 Monday by merrick>
+;; Last modified: <2017-02-22 10:32:59 Wednesday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -75,6 +75,17 @@
 	:bind
 	(("C-s" . swiper)
 	 ("C-c C-r" . ivy-resume)))
+(setq debug-on-error t)
+
+(use-package ivy-rich
+	:pin melpa
+	:after swiper
+	:config
+	(use-package cl)
+	(ivy-set-display-transformer 'ivy-switch-buffer 'ivy-rich-switch-buffer-transformer)
+	(setq ivy-virtual-abbreviate 'full
+				ivy-rich-switch-buffer-align-virtual-buffer t))
+
 
 (use-package counsel
 	:commands (counsel-M-x)
@@ -89,8 +100,14 @@
 	 (:map read-expression-map
 				 ("C-r" . counsel-expression-history))))
 
-;; (use-package counsel-projectile
-;; 	:pin melpa)
+(use-package counsel-projectile
+	:pin melpa
+	:config
+	(ivy-set-display-transformer 'counsel-projectile
+															 'ivy-rich-switch-buffer-transformer)
+	(ivy-set-display-transformer 'counsel-projectile-switch-to-buffer
+															 'ivy-rich-switch-buffer-transformer)
+	(counsel-projectile-on))
 
 ;; (use-package swiper
 ;; 	:config
