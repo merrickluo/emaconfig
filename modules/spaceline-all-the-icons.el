@@ -26,6 +26,7 @@
 (require 'spaceline-config)
 (require 'all-the-icons)
 (require 'flycheck)
+(require 'yahoo-weather)
 
 ;;---------------;;
 ;; First Segment ;;
@@ -75,7 +76,7 @@
         (propertize icon
                     'help-echo (format "Major-mode: `%s`" major-mode)
                     'display '(raise 0.0)
-                    'face `(:height 1.0 :family ,(all-the-icons-icon-family-for-buffer) :inherit)))))
+                    'face `(:height 0.9 :family ,(all-the-icons-icon-family-for-buffer) :inherit)))))
 
 (spaceline-define-segment
     ati-buffer-id "An `all-the-icons' segment for the current buffer id"
@@ -134,12 +135,16 @@
   "Function to return the Spaceline formatted GIT Version Control text."
   (let ((branch (mapconcat 'concat (cdr (split-string vc-mode "[:-]")) "-")))
     (concat
-     (propertize (all-the-icons-alltheicon "git") 'face '(:height 1.1 :inherit) 'display '(raise 0.1))
-     (propertize " · ")
+     (propertize (all-the-icons-alltheicon "git") 'face '(:height 1.0 :inherit) 'display '(raise 0.15))
+     (propertize " · "  'display '(raise 0.15))
      (propertize (format "%s" (all-the-icons-octicon "git-branch"))
                  'face `(:family ,(all-the-icons-octicon-family) :height 1.0 :inherit)
-                 'display '(raise 0.2))
-     (propertize (format " %s" branch) 'face `(:height 0.9 :inherit) 'display '(raise 0.2)))))
+                 'display '(raise 0.15)
+                 )
+     (propertize (format " %s" branch)
+                 'face `(:height 0.9 :inherit)
+                 'display '(raise 0.15)
+                 ))))
 
 (defun spaceline---svn-vc ()
   "Function to return the Spaceline formatted SVN Version Control text."
@@ -173,14 +178,14 @@
               (`interrupted "⛔ Interrupted")
               (`suspicious  "")))
            (f (cond
-               ;; ((string-match "⚠" text) `(:height 0.9 :foreground ,(face-attribute 'spaceline-flycheck-warning :foreground)))
-               ;; ((string-match "✖ [0-9]" text) `(:height 0.9 :foreground ,(face-attribute 'spaceline-flycheck-error :foreground)))
-               ;; ((string-match "✖ Disabled" text) `(:height 0.9 :foreground ,(face-attribute 'font-lock-comment-face :foreground)))
+               ((string-match "⚠" text) `(:height 0.9 :foreground ,(face-attribute 'spaceline-flycheck-warning :foreground)))
+               ((string-match "✖ [0-9]" text) `(:height 0.9 :foreground ,(face-attribute 'spaceline-flycheck-error :foreground)))
+               ((string-match "✖ Disabled" text) `(:height 0.9 :foreground ,(face-attribute 'font-lock-comment-face :foreground)))
                (t '(:height 0.9 :inherit)))))
       (propertize (format "%s" text)
                   'face f
                   'help-echo "Show Flycheck Errors"
-                  'display '(raise 0.2)
+                  'display '(raise 0.15)
                   'mouse-face '(:box 1)
                   'local-map (make-mode-line-mouse-map 'mouse-1 (lambda () (interactive) (flycheck-list-errors)))))
     :when active :tight t )
@@ -347,6 +352,7 @@ the directions of the separator."
 (define-separator "left-2" "right" 'powerline-active1 'spaceline-highlight-face)
 (define-separator "left-3" "right" 'spaceline-highlight-face 'mode-line)
 (define-separator "left-4" "right" 'mode-line 'powerline-active2)
+(define-separator "left-5" "left" 'mode-line 'powerline-active2)
 
 (define-separator "right-1" "left" 'powerline-active2 'powerline-active1)
 (define-separator "right-2" "left" 'powerline-active1 'mode-line)
@@ -361,14 +367,17 @@ the directions of the separator."
    ati-left-2-separator
    ((ati-process ati-position ati-region-info) :face highlight-face :separator " | ")
    ati-left-3-separator
+   (ati-vc-icon :face other-face)
+   ((ati-flycheck-status purpose) )
+   ati-left-4-separator
    ati-left-inactive-separator)
-
+ 
  '(ati-right-1-separator
-   ((ati-vc-icon ati-flycheck-status ati-package-updates purpose) :separator " · " :face other-face)
+   (ati-time)
 ;;   ((ati-suntime ati-weather) :separator " · " :face other-face)
    ati-right-2-separator
    ati-right-inactive-separator
-   ((ati-battery-status ati-time) :separator " | " :face other-face)
+;;   ((ati-battery-status ati-time) :separator " | " :face other-face)
    ))
 
 ;;(setq mode-line-format '("%e" (:eval (spaceline-ml-ati))))
