@@ -3,7 +3,7 @@
 ;; 
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-02-23 17:49:01 Thursday by merrick>
+;; Last modified: <2017-02-28 10:21:27 Tuesday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -33,14 +33,11 @@
 (use-package spaceline-all-the-icons
 	:after spaceline
 	:ensure nil
-  :load-path "~/emaconfig/modules/spaceline-all-the-icons")
-
-(use-package spaceline
-	:after powerline
-  :config
+  :load-path "~/emaconfig/modules/spaceline-all-the-icons"
+	:config
 	(setq-default mode-line-format '("%e" (:eval (spaceline-ml-ati)))))
 
-(display-time)
+(use-package spaceline)
 
 (provide 'modeline-settings)
 ;;; modeline-settings.el ends here

@@ -3,7 +3,7 @@
 ;; 
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-02-21 22:08:35 Tuesday by merrick>
+;; Last modified: <2017-02-25 16:41:01 Saturday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -19,15 +19,35 @@
 ;;
 ;;; Code:
 
+(use-package nvm
+	:config
+	(nvm-use (caar (last (nvm--installed-versions)))))
+
 (use-package js2-mode
 	:commands (js2-mode)
 	:mode (("\\.js\\'" . js2-mode))
   :config
-	(setq js2-basic-offset 2))
+	(setq js2-basic-offset 2)
+	(setq flycheck-eslintrc "")
+	(defun my/use-eslint-from-node-modules ()
+  (let* ((root (locate-dominating-file
+                (or (buffer-file-name) default-directory)
+                "node_modules"))
+         (eslint (and root
+                      (expand-file-name "node_modules/eslint/bin/eslint.js"
+                                        root))))
+    (when (and eslint (file-executable-p eslint))
+      (setq-local flycheck-javascript-eslint-executable eslint))))
+	(setq flycheck-disabled-checkers '(javascript-jshint))
+	(add-hook 'flycheck-mode-hook #'my/use-eslint-from-node-modules)
+	(add-hook 'js2-mode-hook (lambda () (setq-local indent-tabs-mode nil))))
 
 (use-package json-mode
 	:commands (json-mode)
 	:mode "\\.json\\'")
+
+(use-package graphql-mode
+	:mode "\\.graphql\\'")
 
 (provide 'web-settings)
 ;;; web-settings.el ends here

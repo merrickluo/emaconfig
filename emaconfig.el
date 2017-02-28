@@ -3,7 +3,7 @@
 ;; 
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-02-21 22:03:43 Tuesday by merrick>
+;; Last modified: <2017-02-25 11:20:40 Saturday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -24,8 +24,7 @@
 (setq
  package-enable-at-startup nil
  package-archives
- '(("melpa-stable" . "http://stable.melpa.org/packages/")
-   ("melpa"        . "http://melpa.org/packages/")
+ '(("melpa"        . "http://melpa.org/packages/")
    ("org"          . "http://orgmode.org/elpa/")
    ("gnu"          . "http://elpa.gnu.org/packages/")))
 
@@ -37,7 +36,7 @@
 		(package-install 'use-package)))
 
 (require 'use-package)
-(setq use-package-always-pin "melpa-stable")
+(setq use-package-always-pin "melpa")
 (setq use-package-always-ensure t)
 
 (defconst emacs-root-path

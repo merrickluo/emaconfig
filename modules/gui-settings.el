@@ -3,7 +3,7 @@
 ;; 
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-02-21 17:27:22 Tuesday by merrick>
+;; Last modified: <2017-02-28 16:16:47 Tuesday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -46,11 +46,17 @@
 							auto-save-default nil)
 
 (setq-default tab-width 2)
-(set-face-attribute 'default nil :font "Operator Mono Book-10")
+(set-face-attribute 'default nil :font "Operator Mono-13")
+;;(set-face-attribute 'default nil :font "Essential PragmataPro-13")
+;;(set-face-attribute 'default nil :font "Fira Code-13")
 
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
+
+(use-package monokai-theme
+	:config
+	(load-theme 'monokai t))
 
 (use-package leuven-theme
 	:pin melpa

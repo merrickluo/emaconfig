@@ -26,7 +26,6 @@
 (require 'spaceline-config)
 (require 'all-the-icons)
 (require 'flycheck)
-(require 'yahoo-weather)
 
 ;;---------------;;
 ;; First Segment ;;
