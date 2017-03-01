@@ -3,7 +3,7 @@
 ;; 
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-02-25 16:41:01 Saturday by merrick>
+;; Last modified: <2017-03-01 17:02:58 Wednesday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -48,6 +48,14 @@
 
 (use-package graphql-mode
 	:mode "\\.graphql\\'")
+
+(use-package company-tern
+	:config
+	(add-to-list 'company-backends 'company-tern))
+
+(use-package tern
+	:config
+	(add-hook 'js2-mode-hook (lambda () (tern-mode t))))
 
 (provide 'web-settings)
 ;;; web-settings.el ends here
