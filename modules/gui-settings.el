@@ -3,7 +3,7 @@
 ;; 
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-02-28 16:16:47 Tuesday by merrick>
+;; Last modified: <2017-03-01 10:12:39 Wednesday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -58,11 +58,11 @@
 	:config
 	(load-theme 'monokai t))
 
-(use-package leuven-theme
-	:pin melpa
-	:config
-	(load-theme 'leuven t)
-	(setq leuven-scale-outline-headlines nil))
+;; (use-package leuven-theme
+;; 	:pin melpa
+;; 	:config
+;; 	(load-theme 'leuven t)
+;; 	(setq leuven-scale-outline-headlines nil))
 
 (provide 'gui-settings)
 ;;; gui-settings.el ends here
