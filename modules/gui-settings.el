@@ -3,7 +3,7 @@
 ;; 
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-03-01 10:12:39 Wednesday by merrick>
+;; Last modified: <2017-03-01 21:41:05 Wednesday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -46,7 +46,6 @@
 							auto-save-default nil)
 
 (setq-default tab-width 2)
-(set-face-attribute 'default nil :font "Operator Mono-13")
 ;;(set-face-attribute 'default nil :font "Essential PragmataPro-13")
 ;;(set-face-attribute 'default nil :font "Fira Code-13")
 
