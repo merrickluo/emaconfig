@@ -22,9 +22,9 @@
 
 ;;; Code:
 
-(require 'spaceline)
-(require 'spaceline-config)
-(require 'all-the-icons)
+(use-package spaceline)
+(use-package spaceline-config :ensure spaceline)
+(use-package all-the-icons)
 
 ;;---------------;;
 ;; First Segment ;;
@@ -235,14 +235,15 @@
                     'face `(:height 0.9 :family ,(all-the-icons-wicon-family) :inherit)
                     'display '(raise 0.0)))
        (propertize " " 'help-echo help)
-       (propertize (spaceline--get-temp) 'face '(:height 0.9 :inherit) 'help-echo help)))
+       (propertize (spaceline--get-temp) 'face '(:height 0.9 :inherit) 'display '(raise 0.1) 'help-echo help)))
     :when (and active (boundp 'yahoo-weather-info) yahoo-weather-mode)
-    :enabled nil
+    :enabled t
     :tight t)
 
 (spaceline-define-segment
     ati-suntime "Suntime"
     (let ((help (yahoo-weather-info-format yahoo-weather-info "Sunrise at %(sunrise-time), Sunset at %(sunset-time)")))
+      (message "shit")
       (concat
        (propertize (yahoo-weather-info-format yahoo-weather-info "%(sunrise-time) ")
                    'face '(:height 0.9 :inherit) 'display '(raise 0.1) 'help-echo help)
@@ -358,24 +359,22 @@ the directions of the separator."
 (spaceline-compile
  "ati"
  '(
-   ((pati-modified ati-window-numbering ati-buffer-size) :face highlight-face :skip-alternate t)
+   ((ati-modified ati-window-numbering ati-buffer-size) :face highlight-face :skip-alternate t)
    ;; left-active-3
    ati-left-1-separator
    ((ati-projectile ati-mode-icon ati-buffer-id) :face default-face)
    ati-left-2-separator
    ((ati-process ati-position ati-region-info) :face highlight-face :separator " | ")
    ati-left-3-separator
-   (ati-vc-icon :face other-face)
-   ((ati-flycheck-status purpose) )
-   ati-left-4-separator
-   ati-left-inactive-separator)
- 
+   ati-left-inactive-separator
+   ((ati-vc-icon ati-flycheck-status ati-package-updates purpose) :separator " · " :face other-face)
+   ati-left-4-separator)
+
  '(ati-right-1-separator
-   (ati-time)
-;;   ((ati-suntime ati-weather) :separator " · " :face other-face)
+   ((ati-suntime ati-weather) :separator " · " :face other-face)
    ati-right-2-separator
    ati-right-inactive-separator
-;;   ((ati-battery-status ati-time) :separator " | " :face other-face)
+   ((ati-battery-status ati-time) :separator " | " :face other-face)
    ))
 
 ;;(setq mode-line-format '("%e" (:eval (spaceline-ml-ati))))
