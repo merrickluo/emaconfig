@@ -25,7 +25,6 @@
 (require 'spaceline)
 (require 'spaceline-config)
 (require 'all-the-icons)
-(require 'flycheck)
 
 ;;---------------;;
 ;; First Segment ;;
@@ -132,7 +131,7 @@
 
 (defun spaceline---github-vc ()
   "Function to return the Spaceline formatted GIT Version Control text."
-  (let ((branch (mapconcat 'concat (cdr (split-string vc-mode "[:-]")) "-")))
+  (let ((branch (mapconcat 'concat (cdr (split-string vc-mode "[:@-]")) "-")))
     (concat
      (propertize (all-the-icons-alltheicon "git") 'face '(:height 1.0 :inherit) 'display '(raise 0.15))
      (propertize " · "  'display '(raise 0.15))
@@ -156,7 +155,7 @@
 (spaceline-define-segment
     ati-vc-icon "An `all-the-icons' segment for the current Version Control icon"
     (when vc-mode
-      (cond ((string-match "Git[:-]" vc-mode) (spaceline---github-vc))
+      (cond ((string-match "Git[:@-]" vc-mode) (spaceline---github-vc))
             ((string-match "SVN-" vc-mode) (spaceline---svn-vc))
             (t (propertize (format "%s" vc-mode)))))
     :when active)
