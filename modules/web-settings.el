@@ -3,7 +3,7 @@
 ;; 
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-03-02 13:17:38 Thursday by merrick>
+;; Last modified: <2017-03-02 21:00:25 Thursday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -42,6 +42,7 @@
     (when (and eslint (file-executable-p eslint))
       (setq-local flycheck-javascript-eslint-executable eslint))))
 	(setq flycheck-disabled-checkers '(javascript-jshint))
+	(setq js2-strict-missing-semi-warning nil)
 	(add-hook 'flycheck-mode-hook #'my/use-eslint-from-node-modules)
 	(add-hook 'js2-mode-hook (lambda () (setq-local indent-tabs-mode nil))))
 
