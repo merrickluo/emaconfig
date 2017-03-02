@@ -3,7 +3,7 @@
 ;; 
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-03-01 17:02:58 Wednesday by merrick>
+;; Last modified: <2017-03-02 13:17:38 Thursday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -21,7 +21,10 @@
 
 (use-package nvm
 	:config
-	(nvm-use (caar (last (nvm--installed-versions)))))
+	(nvm-use (caar (last (nvm--installed-versions))))
+	(push (concat (cadr nvm-current-version) "/bin") exec-path))
+
+(use-package jade)
 
 (use-package js2-mode
 	:commands (js2-mode)
@@ -51,7 +54,8 @@
 
 (use-package company-tern
 	:config
-	(add-to-list 'company-backends 'company-tern))
+	(add-to-list 'company-backends 'company-tern)
+	(setq company-tern-property-marker " <p>"))
 
 (use-package tern
 	:config
