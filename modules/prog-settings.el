@@ -3,7 +3,7 @@
 ;; 
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-02-16 23:53:44 Thursday by merrick>
+;; Last modified: <2017-03-03 20:45:50 Friday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -36,6 +36,10 @@
 (use-package flycheck
 	:config
 	(add-hook 'prog-mode-hook #'flycheck-mode))
+
+(use-package flycheck-pos-tip
+	:config
+  (add-hook 'flycheck-mode-hook #'flycheck-pos-tip-mode))
 
 (use-package yasnippet
 	:config
