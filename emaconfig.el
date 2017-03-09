@@ -3,7 +3,7 @@
 ;; 
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-03-05 22:51:11 Sunday by merrick>
+;; Last modified: <2017-03-09 21:30:33 Thursday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -27,6 +27,8 @@
  '(("melpa"        . "http://melpa.org/packages/")
    ("org"          . "http://orgmode.org/elpa/")
    ("gnu"          . "http://elpa.gnu.org/packages/")))
+
+(setq x-gtk-use-system-tooltips nil)
 
 (eval-when-compile
 	(require 'package)
@@ -68,6 +70,8 @@
 (load-library "web-settings")
 
 ;;(load-library "chinese-settings")
+
+(set-register ?o '(file . "~/Dropbox/docs/life.org"))
 
 (provide 'emaconfig)
 ;;; emaconfig.el ends here
