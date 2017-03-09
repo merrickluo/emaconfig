@@ -3,7 +3,7 @@
 ;; 
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-02-22 10:32:59 Wednesday by merrick>
+;; Last modified: <2017-03-09 21:26:18 Thursday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -75,7 +75,6 @@
 	:bind
 	(("C-s" . swiper)
 	 ("C-c C-r" . ivy-resume)))
-(setq debug-on-error t)
 
 (use-package ivy-rich
 	:pin melpa
