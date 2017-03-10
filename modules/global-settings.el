@@ -3,7 +3,7 @@
 ;; 
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-03-09 21:26:18 Thursday by merrick>
+;; Last modified: <2017-03-10 16:00:54 Friday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -175,6 +175,8 @@
 
 (use-package ace-window
 	:bind (("C-x o" . ace-window)))
+
+(add-hook 'before-save-hook #'delete-trailing-whitespace)
 
 (provide 'global-settings)
 ;;; global-settings.el ends here
