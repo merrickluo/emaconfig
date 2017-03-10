@@ -3,7 +3,7 @@
 ;; 
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-03-01 21:41:05 Wednesday by merrick>
+;; Last modified: <2017-03-07 18:11:54 Tuesday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -55,7 +55,12 @@
 
 (use-package monokai-theme
 	:config
-	(load-theme 'monokai t))
+	(load-theme 'monokai t)
+	  (setq monokai-height-minus-1 0.8
+        monokai-height-plus-1 1.0
+        monokai-height-plus-2 1.0
+        monokai-height-plus-3 1.0
+        monokai-height-plus-4 1.0))
 
 ;; (use-package leuven-theme
 ;; 	:pin melpa
