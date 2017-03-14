@@ -1,20 +1,20 @@
 ;;; conf-settings.el --- summary
 ;; Description:
-;; 
+;;
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-02-17 00:20:28 Friday by merrick>
+;; Last modified: <2017-03-14 10:43:27 Tuesday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
+;;
 ;;; Commentary:
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
+;;
 ;;; Change log:
-;; 
+;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;; Local Variables:
@@ -34,6 +34,9 @@
   :pin melpa
 	:commands toml-mode
 	:mode "\\.toml\\'")
+
+(use-package fish-mode
+	:mode "\\.fish\\'")
 
 (provide 'conf-settings)
 ;;; conf-settings.el ends here
