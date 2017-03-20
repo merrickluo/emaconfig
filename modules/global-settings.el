@@ -1,20 +1,20 @@
 ;;; global-settings.el --- summary
 ;; Description:
-;; 
+;;
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-03-10 16:00:54 Friday by merrick>
+;; Last modified: <2017-03-20 12:14:13 Monday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
+;;
 ;;; Commentary:
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
+;;
 ;;; Change log:
-;; 
+;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;; Local Variables:
@@ -67,7 +67,8 @@
 		(run-term))
 	(setq projectile-completion-system 'ivy)
 	(setq projectile-switch-project-action #'projectile-commander)
-	(setq projectile-enable-caching t)
+	(setq shell-file-name "/bin/bash")
+	(setq projectile-enable-caching nil)
 	(projectile-global-mode))
 
 (use-package swiper
