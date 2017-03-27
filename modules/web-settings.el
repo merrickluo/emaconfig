@@ -3,7 +3,7 @@
 ;;
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-03-27 17:25:57 Monday by merrick>
+;; Last modified: <2017-03-27 20:40:33 Monday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -19,10 +19,12 @@
 ;;
 ;;; Code:
 
-(use-package nvm
-	:config
-	(nvm-use (caar (last (nvm--installed-versions))))
-	(push (concat (cadr nvm-current-version) "/bin") exec-path))
+;; (use-package nvm
+;; 	:config
+;; 	(nvm-use (caar (last (nvm--installed-versions))))
+;; 	(push (concat (cadr nvm-current-version) "/bin") exec-path))
+
+(push (concat (getenv "HOME") "/.asdf/shims") exec-path)
 
 (use-package jade
 	:config
