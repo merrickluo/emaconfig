@@ -3,7 +3,7 @@
 ;;
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-03-27 17:01:47 Monday by merrick>
+;; Last modified: <2017-03-27 17:25:57 Monday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -24,10 +24,13 @@
 	(nvm-use (caar (last (nvm--installed-versions))))
 	(push (concat (cadr nvm-current-version) "/bin") exec-path))
 
-;; (use-package jade)
+(use-package jade
+	:config
+	(add-hook 'js-mode-hook #'jade-interaction-mode))
+
 (use-package js-mode
-  :ensure nil
-  :config
+	:ensure nil
+	:init
 	(setq js-indent-level 2)
 	(setq flycheck-eslintrc "")
 	(defun my/use-eslint-from-node-modules ()
