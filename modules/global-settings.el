@@ -3,7 +3,7 @@
 ;;
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-03-20 12:14:13 Monday by merrick>
+;; Last modified: <2017-03-27 23:30:06 Monday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -178,6 +178,10 @@
 	:bind (("C-x o" . ace-window)))
 
 (add-hook 'before-save-hook #'delete-trailing-whitespace)
+
+(use-package direnv
+	:config
+	(direnv-mode))
 
 (provide 'global-settings)
 ;;; global-settings.el ends here
