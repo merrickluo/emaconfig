@@ -1,20 +1,20 @@
 ;;; prog-settings.el --- summary
 ;; Description:
-;; 
+;;
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-03-03 20:45:50 Friday by merrick>
+;; Last modified: <2017-03-27 17:45:51 Monday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
+;;
 ;;; Commentary:
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
+;;
 ;;; Change log:
-;; 
+;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;; Local Variables:
@@ -35,11 +35,12 @@
 
 (use-package flycheck
 	:config
-	(add-hook 'prog-mode-hook #'flycheck-mode))
+	(add-hook 'prog-mode-hook #'flycheck-mode)
+	(add-hook 'emacs-lisp-mode-hook (lambda () (flycheck-mode -1))))
 
-(use-package flycheck-pos-tip
-	:config
-  (add-hook 'flycheck-mode-hook #'flycheck-pos-tip-mode))
+;; (use-package flycheck-pos-tip
+;; 	:config
+;;   (add-hook 'flycheck-mode-hook #'flycheck-pos-tip-mode))
 
 (use-package yasnippet
 	:config
