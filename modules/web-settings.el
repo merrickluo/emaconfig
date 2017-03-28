@@ -3,7 +3,7 @@
 ;;
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-03-28 00:10:23 Tuesday by merrick>
+;; Last modified: <2017-03-28 10:38:07 Tuesday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -64,6 +64,8 @@
 	(setq company-tern-property-marker " <p>"))
 
 (defun react-js-mode ()
+	(interactive)
+	(direnv-update-environment)
 	(if (equal (getenv "REACT") "1")
       (web-mode)
 		(js-mode)))
