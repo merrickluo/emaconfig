@@ -3,7 +3,7 @@
 ;;
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-03-28 10:38:07 Tuesday by merrick>
+;; Last modified: <2017-03-28 10:50:28 Tuesday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -47,9 +47,9 @@
 	(setq flycheck-disabled-checkers '(javascript-jshint))
 	(add-hook 'flycheck-mode-hook #'my/use-eslint-from-node-modules))
 
-;; (use-package json-mode
-;; 	:commands (json-mode)
-;; 	:mode "\\.json\\'")
+(use-package json-mode
+	:commands (json-mode)
+	:mode "\\.json\\'")
 
 (use-package graphql-mode
 	:mode "\\.graphql\\'")
