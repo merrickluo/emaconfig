@@ -3,7 +3,7 @@
 ;;
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-03-28 10:50:28 Tuesday by merrick>
+;; Last modified: <2017-04-11 11:08:16 Tuesday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -30,6 +30,15 @@
 	:config
 	(add-hook 'js-mode-hook #'jade-interaction-mode))
 
+(use-package nodejs-repl
+	:config
+	(defun setup-nodejs-repl ()
+		(define-key js-mode-map (kbd "C-x C-e") 'nodejs-repl-send-last-sexp)
+		(define-key js-mode-map (kbd "C-c C-r") 'nodejs-repl-send-region)
+		(define-key js-mode-map (kbd "C-c C-l") 'nodejs-repl-load-file)
+		(define-key js-mode-map (kbd "C-c C-z") 'nodejs-repl-switch-to-repl))
+	(add-hook 'js-mode-hook #'setup-nodejs-repl))
+
 (use-package js-mode
 	:ensure nil
 	:init
@@ -54,9 +63,10 @@
 (use-package graphql-mode
 	:mode "\\.graphql\\'")
 
-(use-package tern
-	:config
-	(add-hook 'js-mode-hook (lambda () (tern-mode t))))
+;;(use-package tern
+;;	:config
+;;	(add-hook 'web-mode-hook (lambda () (tern-mode t)))
+;;	(add-hook 'js-mode-hook (lambda () (tern-mode t))))
 
 (use-package company-tern
 	:config
@@ -75,15 +85,26 @@
   :mode "\\.jsx\\'"
 	:commands web-mode
 	:config
+	(add-to-list 'web-mode-indentation-params '("case-extra-offset" . nil))
 	(setq web-mode-markup-indent-offset 2
         web-mode-css-indent-offset 2
-        web-mode-code-indent-offset 2)
+
+        web-mode-code-indent-offset 2
+				web-mode-attr-indent-offset 2)
 	(setq web-mode-content-types-alist
 				'(("jsx" . "\\.js[x]?\\'")))
   (setq js-indent-level 2)
+	(add-hook 'web-mode-hook #'(lambda () (smartparens-strict-mode -1) (smartparens-mode t)))
 	(use-package flycheck
 		:config
 		(push 'web-mode (flycheck-checker-get 'javascript-eslint 'modes))))
+
+(use-package groovy-mode
+	:config
+  (defun gradle-configs ()
+		(setq-local c-basic-offset 4)
+		(setq-local tab-width 4))
+	(add-hook 'groovy-mode-hook #'gradle-configs))
 
 (provide 'web-settings)
 ;;; web-settings.el ends here
