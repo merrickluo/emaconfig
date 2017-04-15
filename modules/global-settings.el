@@ -3,7 +3,7 @@
 ;;
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-03-27 23:30:06 Monday by merrick>
+;; Last modified: <2017-04-15 22:00:29 Saturday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -42,6 +42,10 @@
 ;;          ("C-x C-f" . helm-find-files)
 ;;          ("C-x C-b" . helm-buffers-list)
 ;;          ("C-x C-r" . helm-resume)))
+
+(use-package exec-path-from-shell
+	:config
+	(exec-path-from-shell-initialize))
 
 ;; projectile
 (use-package projectile
