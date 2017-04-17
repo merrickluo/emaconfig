@@ -3,7 +3,7 @@
 ;;
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-04-17 11:03:58 Monday by merrick>
+;; Last modified: <2017-04-17 17:11:23 Monday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -37,10 +37,30 @@
 		(define-key js-mode-map (kbd "C-c C-z") 'nodejs-repl-switch-to-repl))
 	(add-hook 'js-mode-hook #'setup-nodejs-repl))
 
-(use-package js-mode
+;; (use-package js-mode
+;; 	:ensure nil
+;; 	:init
+;; 	(setq js-indent-level 2)
+;; 	(setq flycheck-eslintrc "")
+;; 	(defun my/use-eslint-from-node-modules ()
+;; 		(let* ((root (locate-dominating-file
+;; 									(or (buffer-file-name) default-directory)
+;; 									"node_modules"))
+;; 					 (eslint (and root
+;; 												(expand-file-name "node_modules/eslint/bin/eslint.js"
+;; 																					root))))
+;; 			(when (and eslint (file-executable-p eslint))
+;; 				(setq-local flycheck-javascript-eslint-executable eslint))))
+;; 	(setq flycheck-disabled-checkers '(javascript-jshint))
+;; 	(add-hook 'flycheck-mode-hook #'my/use-eslint-from-node-modules))
+
+(use-package js2-mode
 	:ensure nil
+	:mode "\\.js\\'"
 	:init
-	(setq js-indent-level 2)
+  (setq js2-basic-offset 2)
+	(setq js2-strict-missing-semi-warning nil)
+	(setq js2-strict-trailing-comma-warning nil)
 	(setq flycheck-eslintrc "")
 	(defun my/use-eslint-from-node-modules ()
 		(let* ((root (locate-dominating-file
