@@ -3,7 +3,7 @@
 ;;
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-04-17 17:11:23 Monday by merrick>
+;; Last modified: <2017-04-17 18:20:44 Monday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -56,7 +56,6 @@
 
 (use-package js2-mode
 	:ensure nil
-	:mode "\\.js\\'"
 	:init
   (setq js2-basic-offset 2)
 	(setq js2-strict-missing-semi-warning nil)
@@ -96,7 +95,7 @@
 	(direnv-update-environment)
 	(if (equal (getenv "REACT") "1")
       (web-mode)
-		(js-mode)))
+		(js2-mode)))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . react-js-mode))
 
 (use-package web-mode
