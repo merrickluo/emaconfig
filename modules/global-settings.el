@@ -3,7 +3,7 @@
 ;;
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-04-15 22:00:29 Saturday by merrick>
+;; Last modified: <2017-04-17 17:24:24 Monday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -152,31 +152,15 @@
 	(add-to-list 'yas-snippet-dirs (concat emacs-root-path "snippets"))
 	(yas-reload-all))
 
-(use-package multi-term
-	:pin melpa
-	:bind (([f3] . smart-run-term)
-				 ("C-<f3>" . dedicated-term))
+(use-package terminal-here
+	:bind (([f3] . smart-run-term))
 	:config
-	(defun dedicated-term()
-		(interactive)
-		(unless (multi-term-dedicated-exist-p)
-			(multi-term-dedicated-open))
-		(multi-term-dedicated-select))
+	(setq terminal-here-terminal-command (list "xfce4-terminal"))
 	(defun smart-run-term()
     (interactive)
 		(if (projectile-project-p)
-				(let* ((term-name (concat "*term " (projectile-project-name) "*"))
-							 (buffer (get-buffer term-name)))
-          (if (not (eq buffer nil))
-							(switch-to-buffer buffer)
-						(progn
-							(multi-term)
-							(rename-buffer term-name)
-              ;; (comint-send-string (get-buffer-process term-name)
-							;; 										(format "cd %s\n" (projectile-project-root)
-							;; 														))
-							)))
-			(multi-term))))
+				(terminal-here-project-launch)
+			(terminal-here-launch))))
 
 (use-package ace-window
 	:bind (("C-x o" . ace-window)))
