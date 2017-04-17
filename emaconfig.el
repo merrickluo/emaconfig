@@ -1,20 +1,20 @@
 ;;; emaconfig.el --- summary
 ;; Description:
-;; 
+;;
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-03-09 21:30:33 Thursday by merrick>
+;; Last modified: <2017-04-17 17:56:02 Monday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
+;;
 ;;; Commentary:
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
+;;
 ;;; Change log:
-;; 
+;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;; Code:
@@ -68,6 +68,9 @@
 (load-library "prog-settings")
 (load-library "org-settings")
 (load-library "web-settings")
+
+;; maybe check system is arch
+(load-library "arch-settings")
 
 ;;(load-library "chinese-settings")
 
