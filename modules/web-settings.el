@@ -3,7 +3,7 @@
 ;;
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-04-11 11:08:16 Tuesday by merrick>
+;; Last modified: <2017-04-17 11:03:58 Monday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -24,11 +24,9 @@
 ;; 	(nvm-use (caar (last (nvm--installed-versions))))
 ;; 	(push (concat (cadr nvm-current-version) "/bin") exec-path))
 
-(push (concat (getenv "HOME") "/.asdf/shims") exec-path)
-
-(use-package jade
+(use-package indium
 	:config
-	(add-hook 'js-mode-hook #'jade-interaction-mode))
+	(add-hook 'js-mode-hook #'indium-interaction-mode))
 
 (use-package nodejs-repl
 	:config
