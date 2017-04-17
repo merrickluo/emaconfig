@@ -3,7 +3,7 @@
 ;;
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-03-27 16:55:22 Monday by merrick>
+;; Last modified: <2017-04-17 10:59:37 Monday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -28,13 +28,17 @@
 ;; 	(setq sml/theme 'light-powerline)
 ;; 	(sml/setup))
 
-(use-package all-the-icons)
-
-(use-package spaceline
-	:demand t
+(use-package spaceline-all-the-icons
+	:init
+	(use-package spaceline)
+	(use-package all-the-icons)
 	:config
-	(load-file (concat emacs-root-path "/modules/spaceline-all-the-icons.el"))
-	(setq-default mode-line-format '("%e" (:eval (spaceline-ml-ati)))))
+	(spaceline-all-the-icons-theme)
+	(spaceline-all-the-icons--setup-package-updates))
+
+(use-package yahoo-weather
+	:config
+	(yahoo-weather-mode))
 
 ;; (use-package spaceline-all-the-icons
 ;; 	:init
