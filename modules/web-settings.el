@@ -3,7 +3,7 @@
 ;;
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-04-17 18:20:44 Monday by merrick>
+;; Last modified: <2017-04-18 16:42:03 Tuesday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -102,12 +102,13 @@
   :mode "\\.jsx\\'"
 	:commands web-mode
 	:config
+	(add-to-list 'web-mode-indentation-params '("lineup-calls" . nil))
 	(add-to-list 'web-mode-indentation-params '("case-extra-offset" . nil))
 	(setq web-mode-markup-indent-offset 2
         web-mode-css-indent-offset 2
-
         web-mode-code-indent-offset 2
-				web-mode-attr-indent-offset 2)
+				web-mode-attr-indent-offset 2
+				js2-basic-offset 2)
 	(setq web-mode-content-types-alist
 				'(("jsx" . "\\.js[x]?\\'")))
   (setq js-indent-level 2)
