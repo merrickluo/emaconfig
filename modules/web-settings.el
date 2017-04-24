@@ -3,7 +3,7 @@
 ;;
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-04-18 16:42:03 Tuesday by merrick>
+;; Last modified: <2017-04-24 10:37:20 Monday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -80,10 +80,11 @@
 (use-package graphql-mode
 	:mode "\\.graphql\\'")
 
-;;(use-package tern
-;;	:config
-;;	(add-hook 'web-mode-hook (lambda () (tern-mode t)))
-;;	(add-hook 'js-mode-hook (lambda () (tern-mode t))))
+(use-package tern
+	:config
+	(add-hook 'web-mode-hook (lambda () (tern-mode t)))
+	(add-hook 'js-mode-hook (lambda () (tern-mode t)))
+	(add-hook 'js2-mode-hook (lambda () (tern-mode t))))
 
 (use-package company-tern
 	:config
