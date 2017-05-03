@@ -3,7 +3,7 @@
 ;;
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-04-17 17:24:24 Monday by merrick>
+;; Last modified: <2017-05-03 14:52:06 Wednesday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -80,6 +80,9 @@
 	:bind
 	(("C-s" . swiper)
 	 ("C-c C-r" . ivy-resume)))
+
+(use-package wgrep)
+(use-package iedit)
 
 (use-package ivy-rich
 	:pin melpa
