@@ -3,7 +3,7 @@
 ;;
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-05-09 12:11:09 Tuesday by merrick>
+;; Last modified: <2017-05-12 18:32:36 Friday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -75,7 +75,7 @@
 
 ;;(load-library "chinese-settings")
 
-(set-register ?o '(file . "~/Dropbox/docs/life.org"))
+(set-register ?o '(file . "~/Dropbox/docs/"))
 
 (provide 'emaconfig)
 ;;; emaconfig.el ends here
