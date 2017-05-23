@@ -3,7 +3,7 @@
 ;;
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-04-24 10:37:20 Monday by merrick>
+;; Last modified: <2017-05-19 22:52:31 Friday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -26,7 +26,8 @@
 
 (use-package indium
 	:config
-	(add-hook 'js-mode-hook #'indium-interaction-mode))
+	(add-hook 'js2-mode-hook #'indium-interaction-mode)
+	(setq indium-update-script-on-save t))
 
 (use-package nodejs-repl
 	:config
@@ -57,6 +58,7 @@
 (use-package js2-mode
 	:ensure nil
 	:init
+	(setq js2-skip-preprocessor-directives t)
   (setq js2-basic-offset 2)
 	(setq js2-strict-missing-semi-warning nil)
 	(setq js2-strict-trailing-comma-warning nil)
