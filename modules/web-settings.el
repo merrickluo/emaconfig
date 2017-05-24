@@ -3,7 +3,7 @@
 ;;
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-05-19 22:52:31 Friday by merrick>
+;; Last modified: <2017-05-24 13:31:53 Wednesday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -92,14 +92,6 @@
 	:config
 	(add-to-list 'company-backends 'company-tern)
 	(setq company-tern-property-marker " <p>"))
-
-(defun react-js-mode ()
-	(interactive)
-	(direnv-update-environment)
-	(if (equal (getenv "REACT") "1")
-      (web-mode)
-		(js2-mode)))
-(add-to-list 'auto-mode-alist '("\\.js\\'" . react-js-mode))
 
 (use-package web-mode
   :mode "\\.jsx\\'"
