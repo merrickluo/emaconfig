@@ -3,7 +3,7 @@
 ;;
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-05-24 13:31:53 Wednesday by merrick>
+;; Last modified: <2017-06-03 10:25:02 Saturday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -23,7 +23,7 @@
 ;; 	:config
 ;; 	(nvm-use (caar (last (nvm--installed-versions))))
 ;; 	(push (concat (cadr nvm-current-version) "/bin") exec-path))
-
+(setq js2-include-node-externs t)
 (use-package indium
 	:config
 	(add-hook 'js2-mode-hook #'indium-interaction-mode)
