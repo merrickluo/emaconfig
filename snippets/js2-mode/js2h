@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: js2h
+# key: js2h
+# --
+// -*- mode: js2; indent-tabs-mode: nil; -*-

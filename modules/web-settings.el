@@ -3,7 +3,7 @@
 ;;
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-06-03 10:25:02 Saturday by merrick>
+;; Last modified: <2017-06-21 11:11:39 Wednesday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -57,12 +57,17 @@
 
 (use-package js2-mode
 	:ensure nil
+	:mode "\\.js\\'"
 	:init
 	(setq js2-skip-preprocessor-directives t)
   (setq js2-basic-offset 2)
 	(setq js2-strict-missing-semi-warning nil)
 	(setq js2-strict-trailing-comma-warning nil)
+	;; Turn off js2 mode errors & warnings (we lean on eslint/standard)
+	(setq js2-mode-show-parse-errors nil)
+	(setq js2-mode-show-strict-warnings nil)
 	(setq flycheck-eslintrc "")
+	(setq js2-include-node-externs t)
 	(defun my/use-eslint-from-node-modules ()
 		(let* ((root (locate-dominating-file
 									(or (buffer-file-name) default-directory)
@@ -93,12 +98,17 @@
 	(add-to-list 'company-backends 'company-tern)
 	(setq company-tern-property-marker " <p>"))
 
+(use-package js-doc
+	:after js2-mode
+	:bind (:map js2-mode-map
+							("C-c i" . js-doc-insert-function-doc)))
+
 (use-package web-mode
   :mode "\\.jsx\\'"
 	:commands web-mode
 	:config
-	(add-to-list 'web-mode-indentation-params '("lineup-calls" . nil))
-	(add-to-list 'web-mode-indentation-params '("case-extra-offset" . nil))
+	;; (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil))
+	;; (add-to-list 'web-mode-indentation-params '("case-extra-offset" . nil))
 	(setq web-mode-markup-indent-offset 2
         web-mode-css-indent-offset 2
         web-mode-code-indent-offset 2
