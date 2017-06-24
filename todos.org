@@ -1,0 +1,7 @@
+# -*- mode: org -*-
+# Last modified: <2017-06-24 10:56:52 Saturday by merrick>
+#+OPTIONS: toc:nil
+#+STARTUP: showall
+#+TODO: TODO(t) UNDERGOING(u) | DONE(d) CANCELED(c)
+#+TITLE: todos
+#+AUTHOR: A.I.
