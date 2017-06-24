@@ -3,7 +3,7 @@
 ;;
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-05-03 14:52:06 Wednesday by merrick>
+;; Last modified: <2017-06-24 11:53:21 Saturday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -29,6 +29,9 @@
 (setq inhibit-splash-screen t)
 (setq initial-scratch-message ";; time ticking
 ")
+
+(global-set-key (kbd "C-c C-d") 'c-hungry-delete-forward)
+(global-set-key (kbd "s-r") 'revert-buffer)
 
 ;; kill term buffer after exit
 (defadvice term-handle-exit
