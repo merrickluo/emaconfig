@@ -3,7 +3,7 @@
 ;;
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-06-24 11:53:21 Saturday by merrick>
+;; Last modified: <2017-07-13 14:50:57 Thursday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -73,7 +73,7 @@
 		"Open Terminal in project root"
 		(run-term))
 	(setq projectile-completion-system 'ivy)
-	(setq projectile-switch-project-action #'projectile-commander)
+	(setq projectile-switch-project-action #'counsel-projectile-find-file)
 	(setq shell-file-name "/bin/bash")
 	(setq projectile-enable-caching nil)
 	(projectile-global-mode))
@@ -82,7 +82,7 @@
 	:commands (swiper ivy-resume)
 	:bind
 	(("C-s" . swiper)
-	 ("C-c C-r" . ivy-resume)))
+	 ("C-c r" . ivy-resume)))
 
 (use-package wgrep)
 (use-package iedit)
