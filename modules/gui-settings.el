@@ -3,7 +3,7 @@
 ;;
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-07-18 10:29:29 Tuesday by merrick>
+;; Last modified: <2017-08-03 15:53:45 Thursday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -182,6 +182,13 @@
 (add-hook 'prog-mode-hook
           #'add-fira-code-symbol-keywords)
 
+(use-package fill-column-indicator
+	:config
+	(setq fci-rule-width 1)
+	(setq fill-column 79)
+	(setq fci-rule-color "darkgrey")
+	(add-hook 'prog-mode-hook
+						(fci-mode t)))
 
 (menu-bar-mode -1)
 (tool-bar-mode -1)
@@ -210,6 +217,16 @@
 ;; (use-package moe-theme
 ;; 	:config
 ;; 	(load-theme 'moe-dark))
+
+(use-package mixed-pitch
+  :ensure t
+  :config
+  ;; If you want it in all text modes:
+  (add-hook 'text-mode-hook #'mixed-pitch-mode)
+  ;; Depending on your specific setup, you may want to adjust the height of
+  ;; variable pitch fonts:
+  ;;(set-face-attribute 'variable-pitch :height 160)
+	)
 
 (use-package zenburn-theme)
 

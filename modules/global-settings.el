@@ -3,7 +3,7 @@
 ;;
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-07-13 14:50:57 Thursday by merrick>
+;; Last modified: <2017-08-05 10:36:54 Saturday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -67,8 +67,8 @@
 		(interactive)
 		(let ((text (substring-no-properties (or (thing-at-point 'symbol) ""))))
 			(if (projectile-project-p)
-					(counsel-ag text (projectile-project-root))
-				(counsel-ag text))))
+					(counsel-rg text (projectile-project-root))
+				(counsel-rg text))))
 	(def-projectile-commander-method ?t
 		"Open Terminal in project root"
 		(run-term))
@@ -80,6 +80,9 @@
 
 (use-package swiper
 	:commands (swiper ivy-resume)
+	:config
+	(setq counsel-grep-base-command
+				"rg -i -M 120 --no-heading --line-number --color never '%s' %s")
 	:bind
 	(("C-s" . swiper)
 	 ("C-c r" . ivy-resume)))
