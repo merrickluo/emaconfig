@@ -3,7 +3,7 @@
 ;;
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-08-01 23:27:19 Tuesday by merrick>
+;; Last modified: <2017-08-11 22:23:11 Friday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -70,6 +70,7 @@
 (load-library "web-settings")
 (load-library "project-settings")
 (load-library "py-settings")
+(load-library "cpp-settings")
 
 ;; maybe check system is arch
 (load-library "arch-settings")
