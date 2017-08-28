@@ -3,7 +3,7 @@
 ;;
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-08-03 15:53:45 Thursday by merrick>
+;; Last modified: <2017-08-25 09:55:31 Friday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -203,11 +203,9 @@
 ;;         monokai-height-plus-3 1.0
 ;;         monokai-height-plus-4 1.0))
 
-;; (use-package leuven-theme
-;; 	:pin melpa
-;; 	:config
-;; 	(load-theme 'leuven t)
-;; 	(setq leuven-scale-outline-headlines nil))
+(use-package leuven-theme
+	:config
+	(setq leuven-scale-outline-headlines nil))
 
 ;; (use-package material-theme
 ;; 	:config
@@ -218,17 +216,17 @@
 ;; 	:config
 ;; 	(load-theme 'moe-dark))
 
-(use-package mixed-pitch
-  :ensure t
-  :config
-  ;; If you want it in all text modes:
-  (add-hook 'text-mode-hook #'mixed-pitch-mode)
-  ;; Depending on your specific setup, you may want to adjust the height of
-  ;; variable pitch fonts:
-  ;;(set-face-attribute 'variable-pitch :height 160)
-	)
+;; (use-package mixed-pitch
+;;   :ensure t
+;;   :config
+;;   ;; If you want it in all text modes:
+;;   (add-hook 'text-mode-hook #'mixed-pitch-mode)
+;;   ;; Depending on your specific setup, you may want to adjust the height of
+;;   ;; variable pitch fonts:
+;;   ;;(set-face-attribute 'variable-pitch :height 160)
+;; 	)
 
-(use-package zenburn-theme)
+;; (use-package zenburn-theme)
 
 (provide 'gui-settings)
 ;;; gui-settings.el ends here

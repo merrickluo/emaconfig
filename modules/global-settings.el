@@ -3,7 +3,7 @@
 ;;
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-08-05 10:36:54 Saturday by merrick>
+;; Last modified: <2017-08-28 10:32:19 Monday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -46,9 +46,10 @@
 ;;          ("C-x C-b" . helm-buffers-list)
 ;;          ("C-x C-r" . helm-resume)))
 
-(use-package exec-path-from-shell
-	:config
-	(exec-path-from-shell-initialize))
+(if (not (string-equal system-type "windows-nt"))
+		(use-package exec-path-from-shell
+			:config
+			(exec-path-from-shell-initialize)))
 
 ;; projectile
 (use-package projectile
