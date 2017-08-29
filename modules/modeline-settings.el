@@ -3,7 +3,7 @@
 ;;
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-04-17 10:59:37 Monday by merrick>
+;; Last modified: <2017-08-29 14:27:13 Tuesday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -36,9 +36,9 @@
 	(spaceline-all-the-icons-theme)
 	(spaceline-all-the-icons--setup-package-updates))
 
-(use-package yahoo-weather
-	:config
-	(yahoo-weather-mode))
+;; (use-package yahoo-weather
+;; 	:config
+;; 	(yahoo-weather-mode))
 
 ;; (use-package spaceline-all-the-icons
 ;; 	:init
