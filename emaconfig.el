@@ -3,7 +3,7 @@
 ;;
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-08-11 22:23:11 Friday by merrick>
+;; Last modified: <2017-08-29 16:18:07 Tuesday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -59,7 +59,6 @@
 (load-library "global-settings")
 (load-library "auto-insert-settings")
 (load-library "git-settings")
-(load-library "modeline-settings")
 (load-library "company-settings")
 (load-library "go-settings")
 (load-library "markdown-settings")
@@ -71,9 +70,14 @@
 (load-library "project-settings")
 (load-library "py-settings")
 (load-library "cpp-settings")
+(load-library "modeline-settings")
+
+;; (use-package tree-mode)
+;; (load-library "reddit")
 
 ;; maybe check system is arch
-(load-library "arch-settings")
+(if (eq system-type 'gnu/linux)
+		(load-library "arch-settings"))
 
 ;;(load-library "chinese-settings")
 
