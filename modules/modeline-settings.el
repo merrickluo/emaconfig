@@ -3,7 +3,7 @@
 ;;
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-08-29 14:27:13 Tuesday by merrick>
+;; Last modified: <2017-08-31 18:20:34 Thursday by Merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -28,13 +28,18 @@
 ;; 	(setq sml/theme 'light-powerline)
 ;; 	(sml/setup))
 
-(use-package spaceline-all-the-icons
-	:init
-	(use-package spaceline)
-	(use-package all-the-icons)
+;; (use-package spaceline-all-the-icons
+;; 	:init
+;; 	(use-package spaceline)
+;; 	(use-package all-the-icons)
+;; 	:config
+;; 	(spaceline-all-the-icons-theme)
+;; 	(spaceline-all-the-icons--setup-package-updates))
+(use-package smart-mode-line
 	:config
-	(spaceline-all-the-icons-theme)
-	(spaceline-all-the-icons--setup-package-updates))
+	(setq sml/no-confirm-load-theme t)
+	(setq sml/theme 'light)
+	(sml/setup))
 
 ;; (use-package yahoo-weather
 ;; 	:config
