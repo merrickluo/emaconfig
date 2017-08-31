@@ -3,7 +3,7 @@
 ;;
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-08-28 10:32:19 Monday by merrick>
+;; Last modified: <2017-08-31 18:10:19 Thursday by Merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -75,7 +75,6 @@
 		(run-term))
 	(setq projectile-completion-system 'ivy)
 	(setq projectile-switch-project-action #'counsel-projectile-find-file)
-	(setq shell-file-name "/bin/bash")
 	(setq projectile-enable-caching nil)
 	(projectile-global-mode))
 
