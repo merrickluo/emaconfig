@@ -3,7 +3,7 @@
 ;;
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-08-31 18:10:19 Thursday by Merrick>
+;; Last modified: <2017-09-01 14:33:43 Friday by Merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -68,13 +68,13 @@
 		(interactive)
 		(let ((text (substring-no-properties (or (thing-at-point 'symbol) ""))))
 			(if (projectile-project-p)
-					(counsel-rg text (projectile-project-root))
-				(counsel-rg text))))
+					(counsel-ag text (projectile-project-root))
+				(counsel-ag text))))
 	(def-projectile-commander-method ?t
 		"Open Terminal in project root"
 		(run-term))
 	(setq projectile-completion-system 'ivy)
-	(setq projectile-switch-project-action #'counsel-projectile-find-file)
+	(setq projectile-switch-project-action #'projectile-dired)
 	(setq projectile-enable-caching nil)
 	(projectile-global-mode))
 
