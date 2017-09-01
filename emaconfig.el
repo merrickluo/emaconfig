@@ -3,7 +3,7 @@
 ;;
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-08-29 16:18:07 Tuesday by merrick>
+;; Last modified: <2017-09-01 14:15:22 Friday by Merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -78,6 +78,9 @@
 ;; maybe check system is arch
 (if (eq system-type 'gnu/linux)
 		(load-library "arch-settings"))
+
+(if (eq system-type 'windows-nt)
+		(load-library "windows-settings"))
 
 ;;(load-library "chinese-settings")
 
