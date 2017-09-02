@@ -3,7 +3,7 @@
 ;;
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-08-29 14:54:55 Tuesday by merrick>
+;; Last modified: <2017-08-30 20:29:31 Wednesday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -19,12 +19,12 @@
 ;;
 ;;; Code:
 
-(use-package perspective
-	:config
-	(persp-mode))
+;; (use-package perspective
+;; 	:config
+;; 	(persp-mode))
 
-(use-package persp-projectile
-	:demand t)
+;; (use-package persp-projectile
+;; 	:demand t)
 
 (defun capture-todo-comment (&optional line)
   (let ((c

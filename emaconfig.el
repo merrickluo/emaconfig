@@ -3,7 +3,7 @@
 ;;
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-09-01 14:15:22 Friday by Merrick>
+;; Last modified: <2017-09-02 10:15:53 Saturday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -20,6 +20,7 @@
 ;;; Code:
 
 ;; Bootstrap `use-package'
+
 (defvar package-archives)
 (setq
  package-enable-at-startup nil
