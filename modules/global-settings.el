@@ -3,7 +3,7 @@
 ;;
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-09-01 14:33:43 Friday by Merrick>
+;; Last modified: <2017-09-02 10:16:15 Saturday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -31,7 +31,7 @@
 ")
 
 (global-set-key (kbd "C-c C-d") 'c-hungry-delete-forward)
-(global-set-key (kbd "s-r") 'revert-buffer)
+(global-set-key (kbd "<f5>") 'revert-buffer)
 
 ;; kill term buffer after exit
 (defadvice term-handle-exit
