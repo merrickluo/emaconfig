@@ -3,7 +3,7 @@
 ;;
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-09-06 20:25:17 Wednesday by Merrick>
+;; Last modified: <2017-09-09 10:13:34 Saturday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -36,11 +36,9 @@
 	 ("C-z h" . perspeen-tab-prev))
   :config
 	(defun workspace-projectile()
-		(perspeen-create-ws)
-		(perspeen-rename-ws (projectile-project-name))
-		(perspeen))
-	(add-hook 'projectile-after-switch-project-hook 'workspace-projectile)
-  (perspeen-mode))
+    (perspeen-change-root-dir (projectile-project-root))
+		(perspeen-rename-ws (projectile-project-name)))
+	(add-hook 'projectile-after-switch-project-hook 'workspace-projectile))
 
 (defun capture-todo-comment (&optional line)
   (let ((c
