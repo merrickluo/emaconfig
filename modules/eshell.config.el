@@ -1,25 +1,3 @@
-;;; eshell.config.el --- summary
-;; Description:
-;;
-;; Author: A.I.
-;; Email: merrick@luois.me
-;; Last modified: <2017-06-30 15:11:39 Friday by merrick>
-;; Copyright (C) 2017 A.I. all rights reserved.
-;; PUBLIC LICENSE: GPLv3
-;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
-;;; Commentary:
-;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
-;;; Change log:
-;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
-;;; Code:
-;; Separator between esh-sections
-
 (require 'dash)
 (require 's)
 

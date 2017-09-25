@@ -1,24 +1,3 @@
-;;; modeline-settings.el --- summary
-;; Description:
-;;
-;; Author: A.I.
-;; Email: merrick@luois.me
-;; Last modified: <2017-09-05 21:43:49 Tuesday by Merrick>
-;; Copyright (C) 2017 A.I. all rights reserved.
-;; PUBLIC LICENSE: GPLv3
-;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
-;;; Commentary:
-;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
-;;; Change log:
-;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
-;;; Code:
-
 ;; (use-package smart-mode-line
 ;; 	:ensure t
 ;; 	:init

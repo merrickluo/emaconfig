@@ -1,35 +1,10 @@
-;;; emaconfig.el --- summary
-;; Description:
-;;
-;; Author: A.I.
-;; Email: merrick@luois.me
-;; Last modified: <2017-09-02 10:15:53 Saturday by merrick>
-;; Copyright (C) 2017 A.I. all rights reserved.
-;; PUBLIC LICENSE: GPLv3
-;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
-;;; Commentary:
-;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
-;;; Change log:
-;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
-;;; Code:
-
 ;; Bootstrap `use-package'
-
-(defvar package-archives)
 (setq
  package-enable-at-startup nil
  package-archives
  '(("melpa"        . "http://melpa.org/packages/")
    ("org"          . "http://orgmode.org/elpa/")
    ("gnu"          . "http://elpa.gnu.org/packages/")))
-
-(setq x-gtk-use-system-tooltips nil)
 
 (eval-when-compile
 	(require 'package)
@@ -48,17 +23,9 @@
 	"Emacs root settings path (in linux).")
 (add-to-list 'load-path (concat emacs-root-path "modules"))
 
-(defun kill-current-buffer()
-	(interactive)
-	(kill-buffer (current-buffer)))
-
-(global-set-key (kbd "C-x k") 'kill-current-buffer)
-
 (load-library "personal-settings")
-
 (load-library "gui-settings")
 (load-library "global-settings")
-(load-library "auto-insert-settings")
 (load-library "git-settings")
 (load-library "company-settings")
 (load-library "go-settings")
@@ -72,9 +39,6 @@
 (load-library "py-settings")
 (load-library "cpp-settings")
 (load-library "modeline-settings")
-
-;; (use-package tree-mode)
-;; (load-library "reddit")
 
 ;; maybe check system is arch
 (if (eq system-type 'gnu/linux)

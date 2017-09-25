@@ -1,27 +1,3 @@
-;;; company-settings.el --- summary
-;; Description:
-;; 
-;; Author: A.I.
-;; Email: merrick@luois.me
-;; Last modified: <2017-02-22 10:39:42 Wednesday by merrick>
-;; Copyright (C) 2017 A.I. all rights reserved.
-;; PUBLIC LICENSE: GPLv3
-;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
-;;; Commentary:
-;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
-;;; Change log:
-;; 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
-;; Local Variables:
-;; byte-compile-warnings: (not free-vars)
-;; End:
-;;; Code:
-
 (use-package company
 	:config
 	(define-key company-active-map (kbd "C-n") 'company-select-next)

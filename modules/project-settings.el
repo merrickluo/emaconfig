@@ -1,24 +1,3 @@
-;;; project-settings.el --- summary
-;; Description:
-;;
-;; Author: A.I.
-;; Email: merrick@luois.me
-;; Last modified: <2017-09-13 17:24:26 Wednesday by merrick>
-;; Copyright (C) 2017 A.I. all rights reserved.
-;; PUBLIC LICENSE: GPLv3
-;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
-;;; Commentary:
-;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
-;;; Change log:
-;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
-;;; Code:
-
 ;; (use-package perspective
 ;; 	:config
 ;; 	(persp-mode))

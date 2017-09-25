@@ -1,28 +1,3 @@
-;;; go-settings.el --- summary
-;; Description:
-;; 
-;; Author: A.I.
-;; Email: merrick@luois.me
-;; Last modified: <2017-02-21 17:21:03 Tuesday by merrick>
-;; Copyright (C) 2017 A.I. all rights reserved.
-;; PUBLIC LICENSE: GPLv3
-;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
-;;; Commentary:
-;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
-;;; Change log:
-;; 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
-;; Local Variables:
-;; byte-compile-warnings: (not free-vars)
-;; End:
-;;
-;;; Code:
-
 (use-package go-mode
 	:commands (godef-jump go-mode)
 	:mode "\\.go\\'"

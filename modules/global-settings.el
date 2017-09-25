@@ -1,28 +1,3 @@
-;;; global-settings.el --- summary
-;; Description:
-;;
-;; Author: A.I.
-;; Email: merrick@luois.me
-;; Last modified: <2017-09-21 23:01:12 Thursday by Merrick>
-;; Copyright (C) 2017 A.I. all rights reserved.
-;; PUBLIC LICENSE: GPLv3
-;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
-;;; Commentary:
-;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
-;;; Change log:
-;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
-;; Local Variables:
-;; byte-compile-warnings: (not free-vars)
-;; End:
-;;
-;;; Code:
-
 ;; behavior settings
 (defalias 'yes-or-no-p 'y-or-n-p)
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
@@ -32,6 +7,11 @@
 
 (global-set-key (kbd "C-c C-d") 'c-hungry-delete-forward)
 (global-set-key (kbd "<f5>") 'revert-buffer)
+
+(defun kill-current-buffer()
+	(interactive)
+	(kill-buffer (current-buffer)))
+(global-set-key (kbd "C-x k") 'kill-current-buffer)
 
 ;; kill term buffer after exit
 (defadvice term-handle-exit
