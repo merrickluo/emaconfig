@@ -3,7 +3,7 @@
 ;;
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-06-21 11:11:39 Wednesday by merrick>
+;; Last modified: <2017-09-25 14:02:02 Monday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -55,30 +55,30 @@
 ;; 	(setq flycheck-disabled-checkers '(javascript-jshint))
 ;; 	(add-hook 'flycheck-mode-hook #'my/use-eslint-from-node-modules))
 
-(use-package js2-mode
-	:ensure nil
-	:mode "\\.js\\'"
-	:init
-	(setq js2-skip-preprocessor-directives t)
-  (setq js2-basic-offset 2)
-	(setq js2-strict-missing-semi-warning nil)
-	(setq js2-strict-trailing-comma-warning nil)
-	;; Turn off js2 mode errors & warnings (we lean on eslint/standard)
-	(setq js2-mode-show-parse-errors nil)
-	(setq js2-mode-show-strict-warnings nil)
-	(setq flycheck-eslintrc "")
-	(setq js2-include-node-externs t)
-	(defun my/use-eslint-from-node-modules ()
-		(let* ((root (locate-dominating-file
-									(or (buffer-file-name) default-directory)
-									"node_modules"))
-					 (eslint (and root
-												(expand-file-name "node_modules/eslint/bin/eslint.js"
-																					root))))
-			(when (and eslint (file-executable-p eslint))
-				(setq-local flycheck-javascript-eslint-executable eslint))))
-	(setq flycheck-disabled-checkers '(javascript-jshint))
-	(add-hook 'flycheck-mode-hook #'my/use-eslint-from-node-modules))
+;; (use-package js2-mode
+;; 	:ensure nil
+;; 	:mode "\\.js\\'"
+;; 	:init
+;; 	(setq js2-skip-preprocessor-directives t)
+;;   (setq js2-basic-offset 2)
+;; 	(setq js2-strict-missing-semi-warning nil)
+;; 	(setq js2-strict-trailing-comma-warning nil)
+;; 	;; Turn off js2 mode errors & warnings (we lean on eslint/standard)
+;; 	(setq js2-mode-show-parse-errors nil)
+;; 	(setq js2-mode-show-strict-warnings nil)
+;; 	(setq flycheck-eslintrc "")
+;; 	(setq js2-include-node-externs t)
+;; 	(defun my/use-eslint-from-node-modules ()
+;; 		(let* ((root (locate-dominating-file
+;; 									(or (buffer-file-name) default-directory)
+;; 									"node_modules"))
+;; 					 (eslint (and root
+;; 												(expand-file-name "node_modules/eslint/bin/eslint.js"
+;; 																					root))))
+;; 			(when (and eslint (file-executable-p eslint))
+;; 				(setq-local flycheck-javascript-eslint-executable eslint))))
+;; 	(setq flycheck-disabled-checkers '(javascript-jshint))
+;; 	(add-hook 'flycheck-mode-hook #'my/use-eslint-from-node-modules))
 
 (use-package json-mode
 	:commands (json-mode)
@@ -89,9 +89,9 @@
 
 (use-package tern
 	:config
-	(add-hook 'web-mode-hook (lambda () (tern-mode t)))
-	(add-hook 'js-mode-hook (lambda () (tern-mode t)))
-	(add-hook 'js2-mode-hook (lambda () (tern-mode t))))
+	(add-hook 'web-mode-hook (lambda () (tern-mode nil)))
+	(add-hook 'js-mode-hook (lambda () (tern-mode nil)))
+	(add-hook 'js2-mode-hook (lambda () (tern-mode nil))))
 
 (use-package company-tern
 	:config
@@ -104,16 +104,29 @@
 							("C-c i" . js-doc-insert-function-doc)))
 
 (use-package web-mode
-  :mode "\\.jsx\\'"
+  :mode "\\.js\\'"
 	:commands web-mode
 	:config
 	;; (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil))
 	;; (add-to-list 'web-mode-indentation-params '("case-extra-offset" . nil))
+	(defun my/use-eslint-from-node-modules ()
+		(let* ((root (locate-dominating-file
+									(or (buffer-file-name) default-directory)
+									"node_modules"))
+					 (eslint (and root
+												(expand-file-name "node_modules/eslint/bin/eslint.js"
+																					root))))
+			(when (and eslint (file-executable-p eslint))
+				(setq-local flycheck-javascript-eslint-executable eslint))))
+	(setq flycheck-disabled-checkers '(javascript-jshint))
+	(add-hook 'flycheck-mode-hook #'my/use-eslint-from-node-modules)
 	(setq web-mode-markup-indent-offset 2
         web-mode-css-indent-offset 2
         web-mode-code-indent-offset 2
 				web-mode-attr-indent-offset 2
 				js2-basic-offset 2)
+	(add-to-list 'web-mode-indentation-params '("lineup-calls" . nil))
+	(add-to-list 'web-mode-indentation-params '("case-extra-offset" . nil))
 	(setq web-mode-content-types-alist
 				'(("jsx" . "\\.js[x]?\\'")))
   (setq js-indent-level 2)
