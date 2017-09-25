@@ -3,7 +3,7 @@
 ;;
 ;; Author: A.I.
 ;; Email: merrick@luois.me
-;; Last modified: <2017-09-09 10:13:34 Saturday by merrick>
+;; Last modified: <2017-09-13 17:24:26 Wednesday by merrick>
 ;; Copyright (C) 2017 A.I. all rights reserved.
 ;; PUBLIC LICENSE: GPLv3
 ;;
@@ -27,14 +27,15 @@
 ;; 	:demand t)
 
 (use-package perspeen
-  :ensure t
+	:demand t
   :init
-  (setq perspeen-use-tab t)
+  (setq perspeen-use-tab nil)
 	:bind
 	(("C-z x" . perspeen-tab-del)
 	 ("C-z l" . perspeen-tab-next)
 	 ("C-z h" . perspeen-tab-prev))
   :config
+	(perspeen-mode)
 	(defun workspace-projectile()
     (perspeen-change-root-dir (projectile-project-root))
 		(perspeen-rename-ws (projectile-project-name)))
@@ -50,8 +51,6 @@
     (while (string-prefix-p c line)
       (setq line (string-remove-prefix c line)))
     (comment-string-strip line t t)))
-
-
 
 ;; TODO hello world
 (use-package org-projectile
