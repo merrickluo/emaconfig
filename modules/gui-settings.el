@@ -23,6 +23,21 @@
 ;;
 ;;; Code:
 
+(when window-system
+	;; use 120 char wide window for largeish displays
+	;; and smaller 80 column windows for smaller displays
+	;; pick whatever numbers make sense for you
+	(if (> (x-display-pixel-width) 1280)
+			(add-to-list 'default-frame-alist (cons 'width 160))
+		(add-to-list 'default-frame-alist (cons 'width 60)))
+	;; for the height, subtract a couple hundred pixels
+	;; from the screen height (for panels, menubars and
+	;; whatnot), then divide by the height of a char to
+	;; get the height we want
+	(add-to-list 'default-frame-alist
+							 (cons 'height (/ (- (x-display-pixel-height) 600)
+																(frame-char-height)))))
+
 (setq-default default-directory "~"
               indicate-buffer-boundaries 'left)
 
@@ -50,10 +65,11 @@
 ;;(set-face-attribute 'default nil :font "Fira Code-13")
 
 (use-package fill-column-indicator
+	:demand t
 	:config
 	(setq fci-rule-width 1)
 	(setq fill-column 79)
-	(setq fci-rule-color "darkgrey")
+	(setq fci-rule-color "grey")
 	(add-hook 'prog-mode-hook
 						(fci-mode t)))
 
