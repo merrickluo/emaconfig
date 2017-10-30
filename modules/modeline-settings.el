@@ -19,6 +19,13 @@
 	:config
 	(setq sml/no-confirm-load-theme t)
 	(setq sml/theme 'respectful)
+  (setq sml/shorten-directory t)
+	(setq sml/shorten-modes t)
+  (setq rm-blacklist
+				(format "^ \\(%s\\)$"
+								(mapconcat #'identity
+													 '("Fly.*" "Projectile.*" "PgLn" "company" "ElDoc" "yas" "ARev")
+													 "\\|")))
 	(sml/setup))
 
 ;; (use-package yahoo-weather

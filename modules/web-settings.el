@@ -121,5 +121,9 @@
 		(setq-local tab-width 4))
 	(add-hook 'groovy-mode-hook #'gradle-configs))
 
+(use-package dart-mode
+	:config
+	(setq dart-enable-analysis-server t))
+
 (provide 'web-settings)
 ;;; web-settings.el ends here

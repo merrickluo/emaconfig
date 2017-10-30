@@ -1,24 +1,24 @@
-;; (use-package perspective
-;; 	:config
-;; 	(persp-mode))
+(use-package perspective
+	:config
+	(persp-mode))
 
-;; (use-package persp-projectile
-;; 	:demand t)
+(use-package persp-projectile
+	:demand t)
 
-(use-package perspeen
-	:demand t
-  :init
-  (setq perspeen-use-tab nil)
-	:bind
-	(("C-z x" . perspeen-tab-del)
-	 ("C-z l" . perspeen-tab-next)
-	 ("C-z h" . perspeen-tab-prev))
-  :config
-	(perspeen-mode)
-	(defun workspace-projectile()
-    (perspeen-change-root-dir (projectile-project-root))
-		(perspeen-rename-ws (projectile-project-name)))
-	(add-hook 'projectile-after-switch-project-hook 'workspace-projectile))
+;; (use-package perspeen
+;; 	:demand t
+;;   :init
+;;   (setq perspeen-use-tab nil)
+;; 	:bind
+;; 	(("C-z x" . perspeen-tab-del)
+;; 	 ("C-z l" . perspeen-tab-next)
+;; 	 ("C-z h" . perspeen-tab-prev))
+;;   :config
+;; 	(perspeen-mode)
+;; 	(defun workspace-projectile()
+;;     (perspeen-change-root-dir (projectile-project-root))
+;; 		(perspeen-rename-ws (projectile-project-name)))
+;; 	(add-hook 'projectile-after-switch-project-hook 'workspace-projectile))
 
 (defun capture-todo-comment (&optional line)
   (let ((c
