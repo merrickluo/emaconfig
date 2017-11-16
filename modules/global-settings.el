@@ -63,8 +63,12 @@
 	:config
 	(setq counsel-grep-base-command
 				"rg -i -M 120 --no-heading --line-number --color never '%s' %s")
+	(defun smart-swiper ()
+		(interactive)
+		(let ((text (substring-no-properties (or (thing-at-point 'symbol) ""))))
+			(swiper text)))
 	:bind
-	(("C-s" . swiper)
+	(("C-s" . smart-swiper)
 	 ("C-c r" . ivy-resume)))
 
 (use-package wgrep)
