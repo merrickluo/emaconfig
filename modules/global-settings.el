@@ -160,5 +160,10 @@
 
 (add-hook 'before-save-hook #'delete-trailing-whitespace)
 
+(use-package dired-sidebar
+  :ensure t
+  :commands (dired-sidebar-toggle-sidebar)
+	:bind (("C-x d" . dired-sidebar-toggle-sidebar)))
+
 (provide 'global-settings)
 ;;; global-settings.el ends here
