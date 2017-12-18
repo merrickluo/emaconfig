@@ -86,8 +86,8 @@
   :mode "\\.js\\'"
 	:commands web-mode
 	:config
-	;; (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil))
-	;; (add-to-list 'web-mode-indentation-params '("case-extra-offset" . nil))
+
+	;; eslint
 	(defun my/use-eslint-from-node-modules ()
 		(let* ((root (locate-dominating-file
 									(or (buffer-file-name) default-directory)
@@ -99,6 +99,12 @@
 				(setq-local flycheck-javascript-eslint-executable eslint))))
 	(setq flycheck-disabled-checkers '(javascript-jshint))
 	(add-hook 'flycheck-mode-hook #'my/use-eslint-from-node-modules)
+
+	;; comment
+	(add-to-list 'web-mode-comment-formats '("javascript" . "//"))
+	(add-to-list 'web-mode-comment-formats '("jsx" . "//"))
+
+	;; indent
 	(setq web-mode-markup-indent-offset 2
         web-mode-css-indent-offset 2
         web-mode-code-indent-offset 2
@@ -106,8 +112,6 @@
 				js2-basic-offset 2)
 	(add-to-list 'web-mode-indentation-params '("lineup-calls" . nil))
 	(add-to-list 'web-mode-indentation-params '("case-extra-offset" . nil))
-	(setq web-mode-content-types-alist
-				'(("jsx" . "\\.js[x]?\\'")))
   (setq js-indent-level 2)
 	(add-hook 'web-mode-hook #'(lambda () (smartparens-strict-mode -1) (smartparens-mode t)))
 	(use-package flycheck
