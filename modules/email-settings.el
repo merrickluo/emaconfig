@@ -1,5 +1,11 @@
-(use-package mu4e
-	:load-path "/usr/local/share/emacs/site-lisp/mu/mu4e"
+(setq-local mu4e-load-path
+						(if (string-equal system-type "darwin")
+								"/usr/local/share/emacs/site-lisp/mu/mu4e"
+							"/usr/share/emacs/site-lisp/mu4e"))
+
+
+(use-package mu4e-contrib
+	:load-path mu4e-load-path
 	:config
 	;;location of my maildir
 	(setq mu4e-maildir (expand-file-name "~/Maildir"))
@@ -10,14 +16,30 @@
 
 	;;command used to get mail
 	;; use this for testing
-	;; (setq mu4e-get-mail-command "true")
+	(setq mu4e-get-mail-command "true")
 	;; use this to sync with mbsync
-	(setq mu4e-get-mail-command "mbsync gmail")
+	;; (setq mu4e-get-mail-command "mbsync gmail")
 
 	;;rename files when moving
 	;;NEEDED FOR MBSYNC
 	(setq mu4e-change-filenames-when-moving t)
 	(setq mu4e-view-show-images t)
+	(setq mu4e-view-prefer-html t)
+	(setq mu4e-html2text-command "w3m -T text/html")
+
+	;; email send settings
+	(setq message-send-mail-function 'smtpmail-send-it
+				mu4e-sent-messages-behavior 'delete)
+
+	(defun gnutls-avaliable-p nil)
+	(setq smtpmail-default-smtp-server "smtp.gmail.com"
+				smtpmail-smtp-server "smtp.gmail.com"
+				smtpmail-smtp-service 587
+				smtpmail-auth-credentials (expand-file-name "~/.authinfo.gpg")
+				smtpmail-smtp-user "merrick@luois.me"
+				;; smtpmail-debug-info t
+				user-mail-address "merrick@luois.me"
+				)
 
 	;;set up queue for offline email
 	;;use mu mkdir  ~/Maildir/queue to set up first
