@@ -31,7 +31,6 @@
 	(setq message-send-mail-function 'smtpmail-send-it
 				mu4e-sent-messages-behavior 'delete)
 
-	(defun gnutls-avaliable-p nil)
 	(setq smtpmail-default-smtp-server "smtp.gmail.com"
 				smtpmail-smtp-server "smtp.gmail.com"
 				smtpmail-smtp-service 587
