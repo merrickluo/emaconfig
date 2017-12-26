@@ -3,9 +3,9 @@
 								"/usr/local/share/emacs/site-lisp/mu/mu4e"
 							"/usr/share/emacs/site-lisp/mu4e"))
 
-
 (use-package mu4e-contrib
 	:load-path mu4e-load-path
+	:bind (("C-c m i" . mu4e-inbox))
 	:config
 	;;location of my maildir
 	(setq mu4e-maildir (expand-file-name "~/Maildir"))
@@ -40,10 +40,12 @@
 				user-mail-address "merrick@luois.me"
 				)
 
-	;;set up queue for offline email
-	;;use mu mkdir  ~/Maildir/queue to set up first
-	(setq smtpmail-queue-mail nil  ;; start in normal mode
-				smtpmail-queue-dir   "~/.mail/queue/cur"))
+	;; hotkey
+	(defun mu4e-inbox ()
+		"jump to mu4e inbox"
+		(interactive)
+		(mu4e~headers-jump-to-maildir "INBOX"))
+	)
 
 (use-package mu4e-alert
 	:after mu4e
