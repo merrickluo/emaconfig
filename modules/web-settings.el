@@ -100,6 +100,9 @@
 	(setq flycheck-disabled-checkers '(javascript-jshint))
 	(add-hook 'flycheck-mode-hook #'my/use-eslint-from-node-modules)
 
+	(setq web-mode-content-types-alist
+				'(("jsx" . "\\.js[x]?\\'")))
+
 	;; comment
 	(add-to-list 'web-mode-comment-formats '("javascript" . "//"))
 	(add-to-list 'web-mode-comment-formats '("jsx" . "//"))
@@ -113,10 +116,11 @@
 	(add-to-list 'web-mode-indentation-params '("lineup-calls" . nil))
 	(add-to-list 'web-mode-indentation-params '("case-extra-offset" . nil))
   (setq js-indent-level 2)
-	(add-hook 'web-mode-hook #'(lambda () (smartparens-strict-mode -1) (smartparens-mode t)))
-	(use-package flycheck
-		:config
-		(push 'web-mode (flycheck-checker-get 'javascript-eslint 'modes))))
+	(add-hook 'web-mode-hook #'(lambda () (smartparens-strict-mode -1) (smartparens-mode t))))
+
+(use-package flycheck
+	:config
+	(push 'web-mode (flycheck-checker-get 'javascript-eslint 'modes)))
 
 (use-package groovy-mode
 	:config
