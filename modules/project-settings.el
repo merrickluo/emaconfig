@@ -1,9 +1,10 @@
 (use-package perspective
+	:demand t
 	:config
-	(persp-mode))
-
-(use-package persp-projectile
-	:demand t)
+	(use-package persp-projectile
+		:demand t
+		:config
+		(persp-mode)))
 
 ;; (use-package perspeen
 ;; 	:demand t
