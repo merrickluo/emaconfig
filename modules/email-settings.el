@@ -44,8 +44,7 @@
 	(defun mu4e-inbox ()
 		"jump to mu4e inbox"
 		(interactive)
-		(mu4e~headers-jump-to-maildir "INBOX"))
-	)
+		(mu4e~headers-jump-to-maildir "/INBOX")))
 
 (use-package mu4e-alert
 	:after mu4e
