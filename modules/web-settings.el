@@ -111,5 +111,7 @@
 	:config
 	(setq dart-enable-analysis-server t))
 
+(use-package web-beautify)
+
 (provide 'web-settings)
 ;;; web-settings.el ends here
