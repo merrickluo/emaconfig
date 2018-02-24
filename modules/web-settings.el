@@ -107,10 +107,6 @@
 	:config
 	(push 'web-mode (flycheck-checker-get 'javascript-eslint 'modes)))
 
-(use-package dart-mode
-	:config
-	(setq dart-enable-analysis-server t))
-
 (use-package web-beautify)
 
 (provide 'web-settings)
