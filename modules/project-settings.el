@@ -44,5 +44,7 @@
 	(global-set-key (kbd "C-c c") 'org-capture)
 	(global-set-key (kbd "C-c n p") 'org-projectile-project-todo-completing-read))
 
+(setq tramp-default-method "ssh")
+
 (provide 'project-settings)
 ;;; project-settings.el ends here
