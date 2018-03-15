@@ -133,5 +133,9 @@
   :commands (dired-sidebar-toggle-sidebar)
 	:bind (("C-x d" . dired-sidebar-toggle-sidebar)))
 
+(use-package pinentry
+	:config
+	(pinentry-start))
+
 (provide 'global-settings)
 ;;; global-settings.el ends here

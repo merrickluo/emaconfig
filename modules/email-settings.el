@@ -40,6 +40,7 @@
 				user-mail-address "merrick@luois.me"
 				)
 
+	(setq mu4e-attachment-dir "~/Downloads")
 	;; hotkey
 	(defun mu4e-inbox ()
 		"jump to mu4e inbox"
