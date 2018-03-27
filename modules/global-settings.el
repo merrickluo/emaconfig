@@ -124,7 +124,9 @@
 			(terminal-here-launch))))
 
 (use-package ace-window
-	:bind (("C-x o" . ace-window)))
+	:bind (("C-x o" . ace-window))
+	:config
+	(setq aw-scope 'frame))
 
 (add-hook 'before-save-hook #'delete-trailing-whitespace)
 
