@@ -37,19 +37,19 @@
 	:init
 	(setq projectile-keymap-prefix (kbd "C-x p"))
 	:bind (([f1] . smart-find-file)
-				 ([f2] . smart-ag))
+				 ([f2] . smart-search))
 	:config
 	(defun smart-find-file()
 		(interactive)
 		(if (projectile-project-p)
 				(projectile-find-file)
 			(counsel-find-file)))
-	(defun smart-ag()
+	(defun smart-search()
 		(interactive)
 		(let ((text (substring-no-properties (or (thing-at-point 'symbol) ""))))
 			(if (projectile-project-p)
-					(counsel-ag text (projectile-project-root))
-				(counsel-ag text))))
+					(counsel-rg text (projectile-project-root))
+				(counsel-rg text))))
 	(def-projectile-commander-method ?t
 		"Open Terminal in project root"
 		(run-term))
