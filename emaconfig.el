@@ -41,6 +41,7 @@
 (load-library "modeline-settings")
 (load-library "email-settings")
 (load-library "feed-settings")
+(load-library "chinese-settings")
 
 ;; maybe check system is arch
 (if (eq system-type 'gnu/linux)
