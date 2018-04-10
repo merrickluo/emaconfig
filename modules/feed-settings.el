@@ -1,5 +1,7 @@
 (use-package elfeed
-	:bind (("C-c f" . elfeed)))
+	:bind (("C-c f" . elfeed))
+	:config
+	(setq elfeed-db-directory "~/Dropbox/elfeed"))
 
 (use-package elfeed-org
 	:after elfeed
