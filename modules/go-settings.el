@@ -31,6 +31,16 @@
 	:bind (:map go-mode-map
 							("C-c C-j" . go-direx-pop-to-buffer)))
 
+(use-package go-projectile
+	:config
+	(add-hook 'go-mode-hook 'go-projectile-tools-add-path))
+(use-package gotest
+	:bind (:map go-mode-map
+							("C-c b" . go-run)
+							("C-c a" . go-test-current-project)
+							("C-c m" . go-test-current-file)
+							("C-c ." . go-test-current-test)))
+
 (use-package protobuf-mode
 	:mode "\\.proto\\'")
 
