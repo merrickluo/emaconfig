@@ -35,6 +35,7 @@
 (setq-default make-backup-files nil
 							auto-save-default nil)
 
+(setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
 ;;(set-face-attribute 'default nil :font "Essential PragmataPro-13")
 ;;(set-face-attribute 'default nil :font "Fira Code-13")
