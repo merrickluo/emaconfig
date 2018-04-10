@@ -39,14 +39,26 @@
 ;;(set-face-attribute 'default nil :font "Essential PragmataPro-13")
 ;;(set-face-attribute 'default nil :font "Fira Code-13")
 
-(use-package fill-column-indicator
-	:demand t
-	:config
-	(setq fci-rule-width 1)
-	(setq fill-column 79)
-	(setq fci-rule-color "grey")
-	(add-hook 'prog-mode-hook
-						(fci-mode t)))
+;; (use-package fill-column-indicator
+;; 	:config
+;; 	(setq fci-rule-width 1)
+;; 	(setq fill-column 79)
+;; 	(setq fci-rule-color "grey")
+;; 	(defun on-off-fci-before-company(command)
+;; 		(when (string= "show" command)
+;; 			(turn-off-fci-mode))
+;; 		(when (string= "hide" command)
+;; 			(turn-on-fci-mode)))
+;; 	(advice-add 'company-call-frontends
+;; 							:before #'on-off-fci-before-company)
+
+;; 	(defun enable-fci-mode ()
+;; 		(setq fci-rule-width 1)
+;; 		(setq fill-column 79)
+;; 		(setq fci-rule-color "grey")
+;; 		(fci-mode))
+
+;; 	(add-hook 'prog-mode-hook #'enable-fci-mode))
 
 (menu-bar-mode -1)
 (tool-bar-mode -1)
