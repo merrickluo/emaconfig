@@ -6,8 +6,3 @@
 	:config
 	(setq rmh-elfeed-org-files '("~/Dropbox/docs/feeds.org"))
 	(elfeed-org))
-
-(use-package elfeed-goodies
-	:after elfeed
-	:config
-	(elfeed-goodies/setup))
