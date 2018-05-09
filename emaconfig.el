@@ -43,6 +43,8 @@
 (load-library "feed-settings")
 (load-library "chinese-settings")
 
+(load-library "util-settings")
+
 ;; maybe check system is arch
 (if (eq system-type 'gnu/linux)
 		(load-library "arch-settings"))
