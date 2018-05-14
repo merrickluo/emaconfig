@@ -8,5 +8,9 @@
 	:config
 	(direnv-mode))
 
+(use-package pinentry
+	:config
+	(pinentry-start))
+
 (provide 'arch-settings)
 ;;; arch-settings.el ends here
