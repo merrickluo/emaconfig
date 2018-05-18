@@ -97,7 +97,8 @@
 ;;   ;;(set-face-attribute 'variable-pitch :height 160)
 ;; 	)
 
-(use-package zenburn-theme)
+;; (use-package zenburn-theme)
+(use-package peacock-theme)
 
 (provide 'gui-settings)
 ;;; gui-settings.el ends here

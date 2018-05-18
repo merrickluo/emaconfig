@@ -1,4 +1,6 @@
 (use-package company
+  :hook
+  (eshell-mode . (lambda () (company-mode -1)))
 	:config
 	(define-key company-active-map (kbd "C-n") 'company-select-next)
 	(define-key company-active-map (kbd "C-p") 'company-select-previous)
