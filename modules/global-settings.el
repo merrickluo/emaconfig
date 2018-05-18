@@ -135,5 +135,7 @@
   :commands (dired-sidebar-toggle-sidebar)
 	:bind (("C-x d" . dired-sidebar-toggle-sidebar)))
 
+(global-set-key (kbd "C-c z") 'eshell)
+
 (provide 'global-settings)
 ;;; global-settings.el ends here
