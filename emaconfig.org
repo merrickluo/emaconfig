@@ -1,0 +1,200 @@
+# -*- mode: org -*-
+#+OPTIONS: toc:nil
+#+STARTUP: showall
+#+TODO: TODO(t) UNDERGOING(u) | DONE(d) CANCELED(c)
+#+TITLE: emaconfig
+#+AUTHOR: A.I.
+
+* Settings
+
+** behavior
+
+this prevent org-babel indent src block
+#+BEGIN_SRC elisp
+(setq org-src-preserve-indentation t)
+#+END_SRC
+
+global shortcuts and convinient methods
+#+BEGIN_SRC elisp
+(defun kill-current-buffer ()
+  (interactive)
+  (kill-buffer (current-buffer)))
+(global-set-key (kbd "C-x k") 'kill-current-buffer)
+
+(defalias 'yes-or-no-p 'y-or-n-p)
+
+(setq inhibit-splash-screen t)
+(setq initial-scratch-message ";; time ticking
+")
+#+END_SRC
+
+autosave file and backup file is annoying
+#+BEGIN_SRC elisp
+;; Put backup files neatly away
+(let ((backup-dir "~/.emacs.d/backups")
+      (auto-saves-dir "~/.emacs.d/auto-saves/"))
+  (dolist (dir (list backup-dir auto-saves-dir))
+    (when (not (file-directory-p dir))
+      (make-directory dir t)))
+  (setq backup-directory-alist `(("." . ,backup-dir))
+        auto-save-file-name-transforms `((".*" ,auto-saves-dir t))
+        auto-save-list-file-prefix (concat auto-saves-dir ".saves-")
+        tramp-backup-directory-alist `((".*" . ,backup-dir))
+        tramp-auto-save-directory auto-saves-dir))
+
+(setq backup-by-copying t    ; Don't delink hardlinks
+      delete-old-versions t  ; Clean up the backups
+      version-control t      ; Use version numbers on backups,
+      kept-new-versions 5    ; keep some new versions
+      kept-old-versions 2)   ; and some old ones, too
+#+END_SRC
+
+I like code stay compact
+#+BEGIN_SRC elisp
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 2)
+#+END_SRC
+
+and disable ugly bars
+#+BEGIN_SRC elisp
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+
+(when window-system
+  (scroll-bar-mode -1))
+#+END_SRC
+
+** ui
+
+zenburn is gooood
+#+BEGIN_SRC elisp
+;; (use-package zenburn-theme)
+(use-package peacock-theme)
+#+END_SRC
+
+* Applications
+
+elfeed is a good rss reader
+sync with Dropbox
+#+BEGIN_SRC elisp
+(use-package elfeed
+	:bind (("C-c f" . elfeed))
+	:config
+	(setq elfeed-db-directory "~/Dropbox/elfeed"))
+
+(use-package elfeed-org
+	:after elfeed
+	:config
+	(setq rmh-elfeed-org-files '("~/Dropbox/docs/feeds.org"))
+	(elfeed-org))
+#+END_SRC
+
+transmission.el is better than any other remote gui tool on Windows
+#+BEGIN_SRC elisp
+(use-package transmission
+  :bind
+  ("C-c t" . transmission)
+  (:map transmission-mode-map
+        ("m" . transmission-add-magnet))
+  :config
+  (defun transmission-add-magnet ()
+    (interactive)
+    (let ((magnet (read-string "magnet link: ")))
+      (transmission-add magnet))))
+#+END_SRC
+
+* Languages
+
+company for all
+#+BEGIN_SRC elisp
+(use-package company
+  :hook
+  (eshell-mode . (lambda () (company-mode -1)))
+	:config
+	(define-key company-active-map (kbd "C-n") 'company-select-next)
+	(define-key company-active-map (kbd "C-p") 'company-select-previous)
+	(define-key company-search-map (kbd "C-n") 'company-select-next)
+	(define-key company-search-map (kbd "C-p") 'company-select-previous)
+	(global-company-mode)
+	(setq company-idle-delay 0)
+	(setq company-dabbrev-downcase nil)
+	(setq company-minimum-prefix-length 2))
+
+;; (use-package company-flx
+;;   :pin melpa
+;;   :after (company)
+;;   :config
+;;   (company-flx-mode))
+#+END_SRC
+
+** go
+#+BEGIN_SRC elisp
+(use-package go-mode
+	:commands (godef-jump go-mode)
+	:mode "\\.go\\'"
+	:bind
+	(:map go-mode-map
+				("M-." . godef-jump)
+				("M-*" . pop-tag-mark))
+  :hook (before-save . gofmt-before-save))
+
+(use-package company-go
+	:after go-mode
+	:config
+	(add-hook 'go-mode-hook
+						(lambda ()
+							(set (make-local-variable 'company-backends) '(company-go)))))
+
+(use-package go-impl
+	:after go-mode)
+
+(use-package go-add-tags
+	:after go-mode)
+
+(use-package go-eldoc
+	:after go-mode
+	:config
+	(add-hook 'go-mode-hook 'go-eldoc-setup))
+
+(use-package go-direx
+	:after go-mode
+	:bind (:map go-mode-map
+							("C-c C-j" . go-direx-pop-to-buffer)))
+
+(use-package go-projectile
+  :hook (go-mode . go-projectile-tools-add-path))
+
+(use-package gotest
+	:bind (:map go-mode-map
+							("C-c b" . go-run)
+							("C-c a" . go-test-current-project)
+							("C-c m" . go-test-current-file)
+							("C-c ." . go-test-current-test)))
+
+(use-package protobuf-mode
+	:mode "\\.proto\\'")
+#+END_SRC
+
+** clojure
+
+#+BEGIN_SRC elisp
+(use-package clojure-mode
+	:commands (clojure-mode clojurescript-mode)
+	:ensure t
+	:mode (("\\..clj\\'" . clojure-mode)
+				 ("\\.cljs\\'" . clojurescript-mode)
+				 ("\\.cljc\\'" . clojurescript-mode)
+				 ("\\.edn\\'" . clojure-mode)))
+
+(use-package cider
+	:commands (cider-jack-in)
+	:defer t
+	:config
+	(setq cider-cljs-lein-repl
+				"(do (require 'figwheel-sidecar.repl-api)
+           (figwheel-sidecar.repl-api/start-figwheel!)
+           (figwheel-sidecar.repl-api/cljs-repl))")
+  (add-hook 'cider-repl-mode-hook #'eldoc-mode))
+#+END_SRC
+
+**
